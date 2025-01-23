@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f8ff, #4caf97);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+        }
+        #display {
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 24px;
+            text-align: right;
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        .button {
+            background-color: #4caf97;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+            flex: 1 1 20%;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button.operator {
+            background-color: #c0392b; /* Другой цвет для операторов */
+        }
+        .button.operator:hover {
+            background-color: #e74c3c;
+        }
+        .button.clear {
+            background-color: #c0392b;
+        }
+        .button.clear:hover {
+            background-color: #e74c3c;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" placeholder="0" disabled />
+        <div class="buttons">
+            <button class="button" onclick="addNumber(7)">7</button>
+            <button class="button" onclick="addNumber(8)">8</button>
+            <button class="button" onclick="addNumber(9)">9</button>
+            <button class="button operator" onclick="setOperation('/')">/</button>
+
+            <button class="button" onclick="addNumber(4)">4</button>
+            <button class="button" onclick="addNumber(5)">5</button>
+            <button class="button" onclick="addNumber(6)">6</button>
+            <button class="button operator" onclick="setOperation('*')">*</button>
+
+            <button class="button" onclick="addNumber(1)">1</button>
+            <button class="button" onclick="addNumber(2)">2</button>
+            <button class="button" onclick="addNumber(3)">3</button>
+            <button class="button operator" onclick="setOperation('-')">-</button>
+
+            <button class="button clear" onclick="clearDisplay()">C</button>
+            <button class="button" onclick="addNumber(0)">0</button>
+            <button class="button operator" onclick="calculate()">=</button>
+            <button class="button operator" onclick="setOperation('+')">+</button>
+            <button class="button operator" onclick="addPercentage()">%</button> <!-- Добавление процентов -->
+
+        </div>
+    </div>
+
+    <script>
+        let currentInput = "";
+        let previousInput = "";
+        let operation = "";
+        let isPercentage = false;
+
+        function addNumber(num) {
+            if (isPercentage) {
+                currentInput = ""; // Очищаем текущий ввод при добавлении нового числа после процентов
+                isPercentage = false;
+            }
+            
+            currentInput += num.toString();
+            updateDisplay();
+        }
+
+        function setOperation(op) {
+            if (currentInput === "") return; 
+            if (previousInput !== "") calculate(); 
+            operation = op;
+            previousInput = currentInput;
+            currentInput = ""; 
+        }
+
+        function calculate() {
+            let result;
+            const prev = parseFloat(previousInput);
+            const current = parseFloat(currentInput);
+
+            if (isNaN(prev) || isNaN(current)) return;
+
+            switch (operation) {
+                case '+':
+                    result = prev + current;
+                    break;
+                case '-':
+                    result = prev - current;
+                    break;
+                case '*':
+                    result = prev * current;
+                    break;
+                case '/':
+                    if (current === 0) {
+                        alert("Ошибка: деление на ноль");
+                        clearDisplay();
+                        return;
+                    }
+                    result = prev / current;
+                    break;
+                default:
+                    return;
+            }
+
+            currentInput = result.toString(); 
+            operation = "";
+            previousInput = "";
+            updateDisplay();
+        }
+
+        function addPercentage() {
+            if (currentInput === "") return;
+            let current = parseFloat(currentInput);
+            if (isNaN(current)) return;
+
+            if (previousInput !== "") {
+                const prev = parseFloat(previousInput);
+                current = prev * (current / 100); // Применяем процент к предыдущему значению
+                currentInput = (prev + current).toString(); // Сложение с предыдущим числом
+            } else {
+                currentInput = (current / 100).toString(); // Если нет предыдущего числа, просто покажем процент
+            }
+
+            isPercentage = true; // Устанавливаем флаг, чтобы очистить ввод при следующем добавлении числа
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentInput = "";
+            previousInput = "";
+            operation = "";
+            isPercentage = false; // Сбрасываем флаг процентов
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("display").value = currentInput || "0"; 
+        }
+    </script>
+
+</body>
+</html>
