@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текстовый редактор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Занимает всю высоту экрана */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .editor-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%; /* Ширина блока с редакторами */
+            max-width: 1000px; /* Максимальная ширина блока */
+        }
+
+        textarea {
+            width: 30%; /* Ширина текстовых областей */
+            height: 300px; /* Высота текстовых областей */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            resize: none; /* Запрет на изменение размеров полей */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Текстовый редактор</h1>
+        <div class="editor-container">
+            <textarea id="doc1">Роботы-рыбы: Исследователи создали роботов, напоминающих рыб, которые могут использоваться для исследования подводного мира, мониторинга окружающей среды и даже в спасательных операциях.</textarea>
+            <textarea id="doc2">Роботы-насекомые: Некоторые ученые разрабатывают маленьких роботов, имитирующих поведение насекомых. Такие роботы могут выполнять задачи в труднодоступных местах или в опасной среде.</textarea>
+            <textarea id="doc3">Роботы-собаки: Например, робот-собака компании Boston Dynamics, известный как Spot, обладает высокой подвижностью и может выполнять множество задач — от патрулирования до помощи в доставке грузов.</textarea>
+        </div>
+    </div>
+</body>
+</html>

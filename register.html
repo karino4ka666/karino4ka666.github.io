@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <style>
+        /* Общие стили */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ffffff, #f0f0f0); /* Градиент от белого к светло-серому */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Стили для меню */
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333; /* Черный цвет */
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .menu a:hover {
+            background-color: #555; /* Темно-серый цвет при наведении */
+        }
+
+        /* Стили для контента */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Стили для формы регистрации */
+        .registration-form {
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .registration-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .registration-form input:hover {
+            border-bottom: 2px solid #696969;
+        }
+
+        .registration-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .registration-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="container">
+ <div class="container">
+        <div class="menu">
+        
+            <a href="glavnua.html">Главная</a>
+            <a href="oнас.html">О нас</a>
+            <a href="телефонсправочник.html">Контакты</a>
+<a href="login.html">Авторизация</a>
+        </div>
+<center>
+        <div class="site-description">
+            <h2>Добро пожаловать на наш сайт!</h2>
+            <p>Пожалуйста, заполните форму регистрации ниже.</p>
+        </div>
+
+        <form class="registration-form" id="registrationForm">
+            <input type="text" id="firstName" placeholder="Имя" required>
+            <input type="text" id="lastName" placeholder="Фамилия" required>
+            <input type="tel" id="phone" placeholder="Номер телефона" required>
+            <input type="text" id="city" placeholder="Город" required>
+            <input type="date" id="dob" placeholder="Дата рождения" required>
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+</center>
+    </div>
+
+    <script>
+        // Обработчик события для формы регистрации
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Предотвращает стандартное поведение отправки формы
+
+            const dob = new Date(document.getElementById("dob").value);
+            const today = new Date();
+
+            // Проверяем, совпадает ли дата рождения с текущей датой
+            if (dob.getDate() === today.getDate() && dob.getMonth() === today.getMonth()) {
+
+                alert("С Днем Рождения!");
+                window.location.href = "glavnua.html"; // Переход на новую страницу
+            } else {
+                alert("Спасибо за регистрацию. Вы будете перенаправлены на главную страницу.");
+                window.location.href = "glavnua.html"; // Переход на главную страницу
+            }
+        });
+    </script>
+</body>
+
+</html>
+

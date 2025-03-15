@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Телефонный справочник</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Белый фон */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; /* Темно-серый заголовок */
+        }
+
+        .info {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+        .info p {
+            color: #333; /* Темно-серый текст */
+            margin: 10px 0;
+        }
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Стили для меню */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333; /* Черный цвет */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu a:hover {
+    background-color: #555; /* Темно-серый цвет при наведении */
+}
+    </style>
+</head>
+<body>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="menu">
+
+            <a href="/account/profile">Профиль</a>
+            <a href="/студия">Назначение роботов</a>
+             <a href="/удмур">Инновации в природе</a>
+            
+              <a href="/loginForm">Регистрация</a>
+             <a href="/нас">О нас</a>
+
+        </div>  
+    <div class="container">
+        <h1>Телефонный справочник</h1>
+
+        <div class="info">
+            <p><strong>Администрация:</strong> 123-45-67</p>
+            <p><strong>Отдел кадров:</strong> 987-65-43</p>
+            <p><strong>Бухгалтерия:</strong> 555-12-34</p>
+            <p><strong>Технический отдел:</strong> 234-56-78</p>
+            <p><strong>Отдел продаж:</strong> 876-54-32</p>
+            <p><strong>Отдел маркетинга:</strong> 543-21-09</p>
+            <p><strong>IT-отдел:</strong> 321-65-43</p>
+            <p><strong>Служба поддержки:</strong> 678-90-12</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            alert("Добро пожаловать в телефонный справочник!\n\n" +
+                "Номера телефонов:\n" +
+                "Администрация: 123-45-67\n" +
+                "Отдел кадров: 987-65-43\n" +
+                "Бухгалтерия: 555-12-34\n" +
+                "Технический отдел: 234-56-78\n" +
+                "Отдел продаж: 876-54-32\n" +
+                "Отдел маркетинга: 543-21-09\n" +
+                "IT-отдел: 321-65-43\n" +
+                "Служба поддержки: 678-90-12\n");
+        }
+    </script>
+</body>
+</html>

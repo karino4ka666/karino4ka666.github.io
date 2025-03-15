@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фреймовая структура с использованием имен окон</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav {
+            background-color: #f8f8f8;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+        }
+        .sidebar {
+            width: 200px;
+            border-right: 1px solid #ccc;
+        }
+        .main {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Фреймовая структура с именами окон</h1>
+</header>
+
+<nav>
+    <a href="glavnua.html" target="contentFrame">Страница 1</a>
+    <a href="oнас.html" target="contentFrame">Страница 2</a>
+    <a href="магазин.html" target="contentFrame">Страница 3</a>
+</nav>
+
+<div class="container">
+    <div class="sidebar">
+        <h3>Навигация</h3>
+        <p>Ссылки для загрузки содержимого:</p>
+        <a href="glavnua.html" target="contentFrame">Страница 1</a><br>
+        <a href="oнас.html" target="contentFrame">Страница 2</a><br>
+        <a href="магазин.html" target="contentFrame">Страница 3</a>
+    </div>
+    <div class="main">
+        <iframe name="contentFrame" src="page1.html"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
