@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Роботы-животные и аксессуары</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Белый фон */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; 
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item {
+            width: calc(33.3% - 20px); /* Ширина для трех элементов в строке с отступами */
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #FFFFFF; /* Белый фон для элементов галереи */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .description {
+            padding: 10px;
+            text-align: center;
+            color: #333; /* Темно-серый текст */
+        }
+
+        .store-hours {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #FFFFFF; 
+            border: 1px solid #333;;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .store-hours h2 {
+            color: #333; /* Королевский синий */
+        }
+
+        /* Стили для графика работы */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .hours-table th, .hours-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .hours-table th {
+            background-color: #333;
+            color: white;
+        }
+
+        .open {
+            background-color: #d4edda; /* Зеленый для открыт */
+        }
+
+        .closed {
+            background-color: #f8d7da; /* Красный для закрыт */
+        }
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Стили для меню */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333; /* Черный цвет */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu a:hover {
+    background-color: #555; /* Темно-серый цвет при наведении */
+}
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="menu">
+
+            <a href="вузы.html">Вузы</a>
+            <a href="телефонсправочник.html">Справочник телефонов</a>
+             <a href="текстовый редактор.html">Текстовый редактор</a>
+             <a href="окнафреймы.html">Фреймы</a>
+              <a href="register.html">Регистрация</a>
+             <a href="справочникулицы.html">Предприятия города</a>
+
+        </div>
+<body>
+    <div class="container">
+        <h1>Роботы-животные и аксессуары</h1>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="photo_2025-02-19_22-34-15.jpg" alt="Робот-кот">
+                <div class="description">
+                    <h3>Робот-кот</h3>
+                    <p>Наш робот-кот умеет играть, мурлыкать и выполнять команды. Идеален для дома!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo_2025-02-19_22-35-19.jpg" alt="Робот-собака">
+                <div class="description">
+                    <h3>Робот-собака</h3>
+                    <p>Робот-собака станет вашим лучшим другом. Играет в мяч и бежит на ваш зов!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo_2025-02-19_22-35-37.jpg" alt="Робот-птица">
+                <div class="description">
+                    <h3>Робот-птица</h3>
+                    <p>Этот робот-птица умеет летать и петь! Прекрасный подарок для детей.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="store-hours">
+            <h2>График работы магазина</h2>
+
+            <table class="hours-table">
+                <thead>
+                    <tr>
+                        <th>День недели</th>
+                        <th>Время работы</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Пн - Пт</td>
+                        <td class="open">09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Сб</td>
+                        <td class="open">10:00 - 16:00</td>
+                    </tr>
+                    <tr>
+                        <td>Вс</td>
+                        <td class="closed">Закрыто</td>
+                    </tr>
+                    <tr>
+                        <td>Праздники</td>
+                        <td class="closed">Закрыто</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+

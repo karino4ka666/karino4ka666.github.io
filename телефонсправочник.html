@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Телефонный справочник</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Белый фон */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; /* Темно-серый заголовок */
+        }
+
+        .info {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+        .info p {
+            color: #333; /* Темно-серый текст */
+            margin: 10px 0;
+        }
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Стили для меню */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333; /* Черный цвет */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu a:hover {
+    background-color: #555; /* Темно-серый цвет при наведении */
+}
+
+.container {
+   
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.instruction {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color:#000000;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+li:nth-child(even) {
+    background-color: #f1f1f1;
+}
+    </style>
+</head>
+<body>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="menu">
+   <a href="вузы.html">Вузы</a>
+            <a href="телефонсправочник.html">Справочник телефонов</a>
+             <a href="текстовый редактор.html">Текстовый редактор</a>
+             <a href="окнафреймы.html">Фреймы</a>
+              <a href="register.html">Регистрация</a>
+             <a href="справочникулицы.html">Предприятия города</a>
+
+
+        </div>  
+
+<body>
+  <div class="container">
+        <h1>Поиск номеров телефонов</h1>
+        <p class="instruction">Введите название профессии, например: "бухгалтер", "программист", "директор", "маркетолог", "дизайнер", "инженер"</p>
+        
+        <input type="text" id="searchInput" placeholder="Введите профессию...">
+        <button id="searchButton">Поиск</button>
+        
+        <h2>Результаты поиска:</h2>
+        <ul id="phoneList"></ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    <script>
+// script.js
+// script.js
+
+// Примерный список профессий и их телефонов
+const phoneBook = [
+    { profession: 'бухгалтер', phone: '+7 (123) 456-78-90' },
+    { profession: 'программист', phone: '+7 (234) 567-89-01' },
+    { profession: 'менеджер', phone: '+7 (345) 678-90-12' },
+    { profession: 'директор', phone: '+7 (456) 789-01-23' },
+    { profession: 'маркетолог', phone: '+7 (567) 890-12-34' },
+    { profession: 'дизайнер', phone: '+7 (678) 901-23-45' },
+    { profession: 'инженер', phone: '+7 (789) 012-34-56' },
+];
+
+// Функция для поиска телефонов по профессии
+function searchPhones() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const filteredPhones = phoneBook.filter(entry => 
+        entry.profession.toLowerCase().includes(input)
+    );
+
+    displayPhones(filteredPhones);
+}
+
+// Функция для отображения результатов поиска
+function displayPhones(filteredPhones) {
+    const phoneList = document.getElementById('phoneList');
+    phoneList.innerHTML = ''; // очищаем предыдущий список
+
+    if (filteredPhones.length > 0) {
+        filteredPhones.forEach(entry => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${entry.profession}: ${entry.phone}`;
+            phoneList.appendChild(listItem);
+        });
+    } else {
+        const listItem = document.createElement('li');
+        listItem.textContent = 'Телефоны не найдены.';
+        phoneList.appendChild(listItem);
+    }
+}
+
+// Обработчик события для кнопки поиска
+document.getElementById('searchButton').addEventListener('click', searchPhones);
+
+    </script>
+</body>
+</html>

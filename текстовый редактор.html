@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="file"],
+select,
+button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+select {
+    margin-right: 10px;
+}
+
+
+/* Стили для меню */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333; /* Черный цвет */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu a:hover {
+    background-color: #555; /* Темно-серый цвет при наведении */
+}
+
+    </style>
+</head>
+<body>
+  
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Текстовый редактор</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="header"></div>
+    <div class="container">
+        <div class="menu">
+
+            <a href="магазин.html">Магазин</a>
+            <a href="калин.html">Назначение роботов</a>
+             <a href="удмур.html">Инновации в природе</a>
+            
+              <a href="register.html">Регистрация</a>
+             <a href="oнас.html">О нас</a>
+
+        </div>
+    <h1>Текстовый редактор</h1>
+    
+    <div>
+        <select id="fontSelector1">
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <button class="underlineBtn">Подчеркнуть текст</button>
+        <textarea id="textArea1" placeholder="Здесь можно вести текст..." rows="10" cols="30"></textarea>
+        <input type="file" id="fileInput1" accept=".txt">
+    </div>
+    
+    <div>
+        <select id="fontSelector2">
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <button class="underlineBtn">Подчеркнуть текст</button>
+        <textarea id="textArea2" placeholder="Здесь можно вести текст..." rows="10" cols="30"></textarea>
+        <input type="file" id="fileInput2" accept=".txt">
+    </div>
+    
+    <div>
+        <select id="fontSelector3">
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <button class="underlineBtn">Подчеркнуть текст</button>
+        <textarea id="textArea3" placeholder="Здесь можно вести текст..." rows="10" cols="30"></textarea>
+        <input type="file" id="fileInput3" accept=".txt">
+    </div>
+    
+    <button id="saveButton">Сохранить</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
+
+<script>
+// script.js
+
+// Функция для загрузки файла
+function loadFile(input, textArea) {
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            textArea.value = e.target.result;
+        };
+        reader.readAsText(file);
+    }
+}
+
+// Обработчик событий для загрузки файлов
+document.getElementById('fileInput1').addEventListener('change', function() {
+    loadFile(this, document.getElementById('textArea1'));
+});
+document.getElementById('fileInput2').addEventListener('change', function() {
+    loadFile(this, document.getElementById('textArea2'));
+});
+document.getElementById('fileInput3').addEventListener('change', function() {
+    loadFile(this, document.getElementById('textArea3'));
+});
+
+// Функция для сохранения документов
+function saveTextAreaContent() {
+    const textAreas = [
+
+        document.getElementById('textArea1').value,
+        document.getElementById('textArea2').value,
+        document.getElementById('textArea3').value,
+    ];
+
+    textAreas.forEach((content, index) => {
+        const blob = new Blob([content], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `document${index + 1}.txt`; // имя файла
+        link.click();
+    });
+}
+
+// Обработчик события для кнопки сохранения
+document.getElementById('saveButton').addEventListener('click', saveTextAreaContent);
+
+// Функция для изменения шрифта текста
+function changeFont(textArea, font) {
+    textArea.style.fontFamily = font;
+}
+
+// Обработчики событий для выбора шрифта
+document.getElementById('fontSelector1').addEventListener('change', function() {
+    changeFont(document.getElementById('textArea1'), this.value);
+});
+document.getElementById('fontSelector2').addEventListener('change', function() {
+    changeFont(document.getElementById('textArea2'), this.value);
+});
+document.getElementById('fontSelector3').addEventListener('change', function() {
+    changeFont(document.getElementById('textArea3'), this.value);
+});
+
+// Функция для подчеркивания текста
+function underlineText(textArea) {
+    const start = textArea.selectionStart;
+    const end = textArea.selectionEnd;
+    const text = textArea.value;
+
+    if (start !== end) {
+        const selectedText = text.substring(start, end);
+        const underlinedText = selectedText.startsWith("__") && selectedText.endsWith("__") 
+            ? selectedText.slice(2, -2) 
+            : `__${selectedText}__`; // добавляем подчеркивание
+        textArea.value = text.substring(0, start) + underlinedText + text.substring(end);
+        textArea.setSelectionRange(start, start + underlinedText.length);
+    }
+}
+
+// Обработчики событий для кнопок подчеркивания текста
+const underlineButtons = document.querySelectorAll('.underlineBtn');
+underlineButtons.forEach((button, index) => {
+    button.addEventListener('click', function() {
+        underlineText(document.getElementById(`textArea${index + 1}`));
+    });
+});
+
+
+</script>
+
+</body>
+</html>

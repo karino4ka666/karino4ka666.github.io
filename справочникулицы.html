@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Стили для меню */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333; /* Черный цвет */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu a:hover {
+    background-color: #555; /* Темно-серый цвет при наведении */
+}
+    </style>
+</head>
+
+</style>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справочник Предприятий Робототехники</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+   <div class="header"></div>
+    <div class="container">
+        <div class="menu">
+
+            <a href="вузы.html">Вузы</a>
+            <a href="телефонсправочник.html">Справочник телефонов</a>
+             <a href="текстовый редактор.html">Текстовый редактор</a>
+             <a href="окнафреймы.html">Фреймы</a>
+              <a href="register.html">Регистрация</a>
+             <a href="справочникулицы.html">Предприятия города</a>
+
+        </div>
+<body>
+    <header>
+        <h1>Справочник Предприятий Робототехники</h1>
+<p> Введите: Школа, Завод, Академия, Научный, Центр, Инжиниринг.
+    </header>
+    <main>
+        <input type="text" id="cityInput" placeholder="Введите город...">
+        <input type="text" id="searchInput" placeholder="Введите название предприятия...">
+        <button id="searchButton">Поиск</button>
+        <div id="result"></div>
+    </main>
+   
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<script>
+// Объект с информацией о предприятиях по городам
+const companyData = {
+    'Ковров': {
+        'Школа': {
+            address: 'ул. Учебная, 1',
+            profile: 'Обучение основам робототехники',
+            website: 'http://schoolrobotics.com'
+        },
+        'Завод Роботов': {
+            address: 'ул. Заводская, 10',
+            profile: 'Производство роботизированных систем',
+            website: 'http://robotfactory.com'
+        },
+        'Центр Инновационных Технологий': {
+            address: 'ул. Технологий, 5',
+            profile: 'Исследования в области робототехники',
+            website: 'http://inno-tech.com'  
+        }
+    },
+    'Москва': {
+        'Академия ': {
+            address: 'ул. Академическая, 15',
+            profile: 'Курсы по робототехнике',
+            website: 'http://robotacademy.com'
+        },
+        'Научный ': {
+            address: 'ул. Научная, 3',
+            profile: 'Научные разработки в робототехнике',
+            website: 'http://roboticsinstitute.com'
+        },
+        'Инжиниринг': {
+            address: 'ул. Инженеров, 12',
+            profile: 'Инженерные решения для робототехники',
+            website: 'http://robotengineering.com'
+        }
+    }
+};
+
+// Функция для поиска предприятия по городу и названию
+document.getElementById('searchButton').addEventListener('click', function() {
+    const city = document.getElementById('cityInput').value.toLowerCase();
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = ''; // Очистить предыдущие результаты
+    
+    const cityData = companyData[city.charAt(0).toUpperCase() + city.slice(1)];
+    
+    if (cityData) {
+        const company = cityData[input.charAt(0).toUpperCase() + input.slice(1)];
+        
+        if (company) {
+            resultDiv.innerHTML = `
+                <h3>${input.charAt(0).toUpperCase() + input.slice(1)} в ${city.charAt(0).toUpperCase() + city.slice(1)}</h3>
+                <p><strong>Адрес:</strong> ${company.address}</p>
+
+                <p><strong>Профиль работы:</strong> ${company.profile}</p>
+                <p><strong>Веб-сайт:</strong> <a href="${company.website}" target="_blank">${company.website}</a></p>
+            `;
+        } else {
+            resultDiv.innerHTML = '<p>Предприятие не найдено.</p>';
+        }
+    } else {
+        resultDiv.innerHTML = '<p>Город не найден.</p>';
+    }
+});
+
+
+</script>
+
+</body>
+</html>
