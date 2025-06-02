@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <style>
+        /* Общие стили */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ffffff, #f0f0f0); /* Градиент от белого к светло-серому */
+        }
+ 
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Стили для меню */
+        .menu {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 0;
+            left: -250px; /* Скрыто слева */
+            width: 250px; /* Ширина меню */
+            height: 100%; /* Высота меню */
+            background-color: #333; /* Цвет фона меню */
+            color: white; /* Цвет текста в меню */
+            transition: left 0.3s; /* Плавный переход */
+            z-index: 1000; /* Находится поверх других элементов */
+        }
+
+        .menu.open {
+            left: 0; /* Меню открыто */
+        }
+
+        .menu ul {
+            list-style: none; /* Убираем маркеры списков */
+            padding: 0; /* Убираем отступы */
+        }
+
+        .menu ul li {
+            padding: 15px; /* Отступы для элементов списка */
+        }
+
+        .menu ul li a {
+            color: white; /* Цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .menu .close-btn {
+            cursor: pointer; /* Курсор в виде руки */
+            padding: 15px; /* Отступы для кнопки закрытия */
+            text-align: right; /* Выравнивание вправо */
+        }
+
+        .menu .close-btn:hover {
+            color: #FFD700; /* Цвет текста при наведении */
+        }
+
+        /* Иконка открытия меню (три точки) */
+        .menu-toggle {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 20px; /* Отступ от верха */
+            left: 20px; /* Отступ от левой стороны */
+            cursor: pointer; /* Курсор в виде руки */
+            z-index: 1001; /* Находится над меню */
+            font-size: 30px; /* Размер иконки */
+            color: #333; /* Цвет иконки */
+        }
+
+        /* Стили для контента */
+        .content {
+            flex: 1; /* Заполнение оставшегося места */
+            display: flex; /* Используем флекс-бокс для выравнивания */
+            justify-content: center; /* Горизонтальное выравнивание по центру */
+            align-items: center; /* Вертикальное выравнивание по центру */
+            padding: 20px;
+        }
+
+        /* Стили для формы регистрации */
+        .registration-form {
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .registration-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .registration-form input:hover {
+            border-bottom: 2px solid #696969;
+        }
+
+        .registration-form input[type="submit"] {
+
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .registration-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Определяем класс 3939 для ссылки */
+        .link-3939 {
+            color: black; /* Цвет ссылки черный */
+            text-decoration: none; /* Убираем подчеркивание */
+            margin-top: 10px; /* Отступ сверху для ссылки */
+        }
+        
+        .link-3939:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Иконка для открытия меню (три точки) -->
+        <div class="menu-toggle" onclick="toggleMenu()">&#8230;</div>
+
+        <!-- Боковое меню -->
+        <div class="menu" id="sidebarMenu">
+            <div class="close-btn" onclick="toggleMenu()">✖️</div>
+            <ul>
+                <li><a href="главная — копия.html">Главная</a></li>
+                <li><a href="создатели — копия — копия — копия.html">Виды робото-животных</a></li>
+                <li><a href="калин — копия (2).html">Назначение робото-животных</a></li>
+                <li><a href="о нас.html">О нас</a></li>
+            </ul>
+        </div>
+<!-- Контент страницы авторизации -->
+<div class="content">
+    <form class="registration-form" id="loginForm">
+        <h2>Авторизация</h2>
+        <input type="text" id="username" placeholder="Логин" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <input type="submit" value="Войти">
+        <a href="регистрация.html" class="link-3939">Нет аккаунта? Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
+    </form>
+</div>
+
+   <script>
+    // Функция для открытия и закрытия бокового меню
+    function toggleMenu() {
+        const menu = document.getElementById('sidebarMenu');
+        menu.classList.toggle('open'); // Переключение класса 'open'
+    }
+
+     // Обработчик события для формы авторизации
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Предотвращает стандартное поведение отправки формы
+
+        // Выполняем перенаправление на другую страницу
+        window.location.href = "главная — копия.html"; // Замените на нужный вам URL
+    });
+</script>
+
+    </script>
+</body>
+</html>

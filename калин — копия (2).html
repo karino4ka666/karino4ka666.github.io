@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баннер - Познакомьтесь с робото-животными</title>
+    <style>
+       body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+zoom: 0.8; /* Уменьшает весь контент до 80% от оригинального размера */
+
+}
+
+        /* Стили для баннера */
+        .banner {
+            height: 60vh; /* Высота баннера */
+            display: flex; /* Флекс-контейнер */
+            flex-direction: column; /* Вертикальная ориентация */
+            justify-content: center; /* Центрируем по вертикали */
+            align-items: center; /* Центрируем по горизонтали */
+            position: relative; /* Позиционирование */
+            overflow: hidden; /* Обрезка содержимого */
+            background-color: #ccc; /* Цвет фона баннера */
+            color: white; /* Цвет текста в баннере */
+        }
+
+        .slider {
+            display: flex; /* Флекс-контейнер для слайдера */
+            animation: slide 10s infinite; /* Анимация слайдов */
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-100%);
+            }
+
+            45% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-200%);
+            }
+
+            70% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .slide {
+            min-width: 100%; /* Каждый слайд занимает 100% ширины */
+            transition: opacity 0.5s ease; /* Плавный переход */
+        }
+
+        .banner img {
+            width: 100%; /* Изображение на всю ширину */
+            height: auto; /* Автоматическая высота */
+            opacity: 0.7; /* Полупрозрачность */
+            transition: opacity 0.5s ease; /* Плавный переход */
+        }
+
+        .banner img:hover {
+            opacity: 1; /* Полная непрозрачность при наведении */
+        }
+
+        .banner h1 {
+            position: absolute; /* Объект над текстом */
+            top: 50%; /* Центрируем по вертикали */
+            left: 50%; /* Центрируем по горизонтали */
+            transform: translate(-50%, -50%); /* Выравнивание по центру */
+            font-size: 3em; /* Размер шрифта */
+            text-align: center; /* Центрированное выравнивание */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Тень для текста */
+        }
+
+        .button {
+            position: absolute; /* Позиционирование для кнопки */
+            bottom: 20px; /* Отступ от низа */
+            background-color: white; /* Цвет фона кнопки */
+            color: #333; /* Цвет текста */
+            border: none; /* Убираем границы */
+            padding: 15px 30px; /* Отступы */
+            font-size: 1.2em; /* Размер шрифта */
+            cursor: pointer; /* Курсор в виде руки */
+            border-radius: 5px; /* Скругление углов кнопки */
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
+        }
+
+        .button:hover {
+            background-color: #bbb; /* Цвет кнопки при наведении */
+
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        /* Оформление галереи роботов-животных */
+     .image-container {
+    display: flex; /* Используем Flexbox для центрирования изображения */
+    justify-content: center; /* Центрируем изображение по горизонтали */
+    margin: 10px 0; /* Вертикальные отступы вокруг изображения */
+}
+
+.image-container img {
+    width: 150px; /* Ширина изображения */
+    height: 150px; /* Высота изображения */
+    border-radius: 50%; /* Делаем изображение круглым */
+    object-fit: cover; /* Обрезаем изображение, сохраняя его пропорции */
+}
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background-image: url('img_8.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.header-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+
+        .container {
+            max-width: 1200px; /* Максимальная ширина контейнера */
+            margin: 0 auto; /* Центрируем контейнер */
+            padding: 20px; /* Отступы */
+        }
+
+        .site-description {
+            margin-bottom: 20px; /* Отступ внизу */
+        }
+
+        .article {
+            background: white; /* Белый фон для статьи */
+            border-radius: 10px; /* Скругленные углы */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            padding: 20px; /* Внутренние отступы */
+            margin-bottom: 20px; /* Отступ между статьями */
+        }
+
+        .article h2 {
+            margin: 0; /* Убираем отступы */
+            padding-bottom: 15px; /* Отступ снизу */
+            border-bottom: 2px solid #eee; /* Линия под заголовком */
+            font-size: 1.8em; /* Размер заголовка статьи */
+        }
+
+        .text-image-container {
+            display: flex; /* Используем Flexbox */
+            justify-content: space-between; /* Пробел между элементами */
+            align-items: center; /* Центрируем по вертикали */
+            margin-bottom: 20px; /* Отступ между блоками */
+            flex-wrap: wrap; /* Элементы переносятся на следующую строку */
+        }
+
+        .text-content,
+        .image-content {
+            flex: 1; /* Отображение на равных ширинах */
+            padding: 10px; /* Отступ внутри */
+        }
+
+        .image-content {
+            display: flex;
+            justify-content: center; /* Центрируем изображение */
+            align-items: center;
+        }
+
+        .image-content img {
+            max-width: 100%; /* Ограничиваем максимальную ширину изображения */
+            height: auto; /* Автоматическая высота */
+            border-radius: 500px; /* Скругляем углы */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+        }
+
+        h3 {
+            margin-top: 20px; /* Отступ сверху для заголовков фактов */
+        }
+
+        .fact {
+            background: #fff; /* Белый фон для факта */
+            border-radius: 10px; /* Скругление углов */
+            padding: 15px; /* Внутренний отступ */
+            margin-bottom: 10px; /* Отступ между фактами */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            transition: transform 0.3s ease; /* Плавный переход для факта */
+        }
+
+        .fact:hover {
+            background-color: rgb(0 0 0 / 34%); /* Цвет фона при наведении */
+            transform: translateY(-3px); /* Поднимаем факт при наведении */
+        }
+
+
+
+
+ }
+
+        .site-description {
+            margin-bottom: 20px; /* Отступ внизу */
+        }
+
+        .highlighted-article {
+            background: #fff; /* Белый фон для статьи */
+            border-radius: 10px; /* Скругленные углы */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            padding: 20px; /* Внутренние отступы */
+            margin-bottom: 20px; /* Отступ между статьями */
+            transition: background-color 0.3s ease; /* Плавный переход для фона */
+        }
+
+        .highlighted-article:hover {
+            background-color: rgb(0 0 0 / 34%); /* Цвет фона при наведении */
+        }
+
+        h2 {
+            margin: 0; /* Убираем отступы для заголовка */
+            padding-bottom: 10px; /* Отступ снизу */
+            border-bottom: 2px solid #333; /* Линия под заголовком */
+            font-size: 2em; /* Размер заголовка */
+            color: #333; /* Цвет текста заголовка */
+        }
+
+        .article {
+            background: #fff; /* Белый фон для статьи */
+            border-radius: 10px; /* Скругленные углы */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            padding: 15px; /* Внутренние отступы */
+            margin-top: 10px; /* Отступ сверху для статьи */
+        }
+
+        p {
+            margin: 5px 0 0; /* Отступы для параграфа */
+        }
+	
+        .footer {
+            background-color: #333; /* Черный подвал */
+            color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px; /* Отступ сверху */
+        }
+
+ 
+
+
+        /* Стили для бокового меню */
+        .menu {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 0;
+            left: -250px; /* Скрыто слева */
+            width: 250px; /* Ширина меню */
+            height: 100%; /* Высота меню */
+
+            background-color: #333; /* Цвет фона меню */
+            color: white; /* Цвет текста в меню */
+            transition: left 0.3s; /* Плавный переход */
+            z-index: 1000; /* Находится поверх других элементов */
+        }
+
+        .menu.open {
+            left: 0; /* Меню открыто */
+        }
+
+        .menu ul {
+            list-style: none; /* Убираем маркеры списков */
+            padding: 0; /* Убираем отступы */
+        }
+
+        .menu ul li {
+            padding: 15px; /* Отступы для элементов списка */
+        }
+
+        .menu ul li a {
+            color: white; /* Цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .menu .close-btn {
+            cursor: pointer; /* Курсор в виде руки */
+            padding: 15px; /* Отступы для кнопки закрытия */
+            text-align: right; /* Выравнивание вправо */
+        }
+
+        .menu .close-btn:hover {
+            color: #FFD700; /* Цвет текста при наведении */
+        }
+
+        /* Иконка открытия меню (три точки) */
+        .menu-toggle {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 20px; /* Отступ от верха */
+            left: 20px; /* Отступ от левой стороны */
+            cursor: pointer; /* Курсор в виде руки */
+            z-index: 1001; /* Находится над меню */
+            font-size: 30px; /* Размер иконки */
+            color: #333; /* Цвет иконки */
+        }
+ul {
+    list-style-type: disc; /* Задает стиль маркера - обычные точки */
+    padding-left: 20px; /* Отступ для списка */
+    color: black; /* Цвет точек */
+}
+
+h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Переход для анимации */
+}
+
+/* Анимация при наведении */
+h2:hover {
+    transform: scale(1.1); /* Увеличиваем текст при наведении */
+    color: #888; /* Меняем цвет текста при наведении */
+}
+
+
+h3 {
+    display: block;
+
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Переход для анимации */
+}
+
+/* Анимация при наведении */
+h3:hover {
+    transform: scale(1.1); /* Увеличиваем текст при наведении */
+    color: #888; /* Меняем цвет текста при наведении */
+}
+
+ .prev-button, .next-button {
+            margin: 0 10px; /* Добавляем отступы между кнопками */
+            padding: 10px 20px; /* Увеличиваем отступы кнопок */
+            background-color: #ffffff; /* Цвет фона */
+            color: #000000; /* Цвет текста */
+            border: none; /* Убираем рамку */
+            border-radius: 5px; /* Закругленные углы */
+            cursor: pointer; /* Указываем, что кнопки кликабельны */
+            font-size: 16px; /* Размер шрифта */
+        }
+
+        .prev-button:hover, .next-button:hover {
+            background-color: #ccc; /* Изменяем цвет при наведении */
+        }
+
+.footer .social-icons {
+    display: flex; /* Используем flexbox для выравнивания иконок */
+    justify-content: center; /* Центрируем иконки */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.footer .social-icons a {
+    margin: 0 10px; /* Отступ между иконками */
+    font-size: 20px; /* Размер иконок */
+    color: #bbb; /* Цвет иконок по умолчанию */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+.footer .social-icons a:hover {
+    color: #fff; /* Изменение цвета иконок при наведении */
+}
+
+a {
+    color: rgba(255, 255, 255, 0.6); /* Установка цвета ссылок на белый */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+}
+
+
+
+
+
+
+        /* Стили для заголовков */
+        h3 {
+            background-color: #888; /* Цвет заголовка */
+            color: white; /* Цвет текста */
+            padding: 10px; /* Отступы */
+            border-radius: 5px; /* Закругленные углы */
+            cursor: pointer; /* Курсор-указатель при наведении */
+            margin-top: 10px; /* Отступ сверху */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+
+        h3:hover {
+            background-color: rgba(0, 0, 0, 0.6); /* Цвет при наведении */
+        }
+
+        .conte {
+            display: none; /* Скрыто по умолчанию */
+            margin-top: 10px; /* Отступ сверху */
+            padding: 15px; /* Отступы */
+            background-color: #e9ecef; /* Цвет фона для контента */
+            border-left: 5px solid #007BFF; /* Левый бордер для выделения */
+            border-radius: 5px; /* Закругленные углы */
+        }
+
+
+.fade-in {
+    opacity: 0; /* Элементы изначально скрыты */
+    transform: translateX(100px); /* Сдвинуты вправо на 100px */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+}
+
+.fade-in.left {
+    transform: translateX(-100px); /* Для элементов слева сдвигаем влево */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Полная непрозрачность при добавлении класса visible */
+    transform: translateX(0); /* Возвращаем его в исходное положение */
+}
+
+
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<body>
+    <!-- Иконка для открытия меню (три точки) -->
+    <div class="menu-toggle" onclick="toggleMenu()">&#8230;</div>
+
+    <!-- Боковое меню -->
+    <div class="menu" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖️</div>
+        <ul>
+<li><a href="главная — копия.html">Главная</a></li>
+            <li><a href="создатели — копия — копия — копия.html">Виды робото-животных</a></li>
+            <li><a href="калин — копия (2).html">Назначение робото-животных</a></li>
+            <li><a href="oнас.html">О нас</a></li>
+<li><a href="register.html">Регистрация</a></li>
+
+        </ul>
+    </div>
+
+   
+
+    <div class="banner">
+        <div class="slider">
+            <div class="slide">
+                <img src="C:\Users\Карина\Downloads\спиридонову\сайт животные\templates\futuristic-half-robot-tiger_23-2151558840.jpg" alt="Робот-собака"> <!-- Замените на свои изображения -->
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Карина\Downloads\спиридонову\сайт животные\templates\futuristic-half-robot-tiger_23-2151558875.jpg" alt="Робот-кошка"> <!-- Замените на свои изображения -->
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Карина\Downloads\спиридонову\сайт животные\templates\futuristic-half-robot-tiger_23-2151558772.jpg"alt="Робот-птица"> <!-- Замените на свои изображения -->
+            </div>
+            <div class="slide">
+                <img src="img_robot_dinosaur.jpg" alt="Робот-динозавр"> <!-- Замените на свои изображения -->
+            </div>
+        </div>
+      
+        
+    </div>
+
+    <!-- Содержимое страницы после баннеров -->
+    <div class="fade-in left"> 
+ <div class="container">
+        <div class="site-description">
+   <div class="highlighted-article">
+           <h2>Разнообразие животного мира: Почему они важны и каковы их функции</h2>
+                <div class="article">
+                    <p>Виртуальные питомцы — ещё один инструмент для достижения целей и удовлетворения нужд пользователей, доступный внутри киберпространства. Потребностей существует множество. Некоторые из них хотелось бы рассмотреть поподробнее (частично опираясь на мысль о том, что идентичность пользователя в Интернете претерпевает изменения и не соотносится с реальным человеком на сто процентов): например, желание заботиться и почувствовать ответственность, стремление стать частью сообщества; получение подтверждения собственных способностей; борьба со скукой, денежная выгода.</p>
+                </div> 
+ </div> 
+
+
+ 
+    
+   
+
+ <div class="article" id="facts">
+        <div class="text-image-container">
+            <div class="text-content">
+
+                <h3>1. Компаньоны и эмоциональная поддержка</h3>
+                <p class="fact">
+
+                    Домашние животные, такие как собаки, кошки и попугаи, часто становятся верными спутниками человека. Их присутствие способствует улучшению эмоционального фона, снижению уровня стресса и депрессии. Исследования показывают, что взаимодействие с животными помогает людям чувствовать себя более счастливыми и удовлетворёнными.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="img_9.png" alt="Робот-собака">
+            </div>
+        </div>
+
+        <div class="text-image-container">
+            <div class="image-content">
+                <img src="img_10.png" alt="Робот-кошка">
+            </div>
+            <div class="text-content">
+                <h3>2. Образовательная функция</h3>
+                <p class="fact">
+                    Животные также играют важную роль в образовании. Они помогают учить детей ответственности, заботе и уважению к окружающей среде. Дети, ухаживающие за питомцами, учатся различать эмоции и бескорыстную любовь. А на уроках биологии или экологии наблюдение за живыми существами помогает понять важность биологического разнообразия и экосистем.
+                </p>
+            </div>
+        </div>
+
+        <div class="text-image-container">
+            <div class="text-content">
+                <h3>3. Сельское хозяйство и продовольственная безопасность</h3>
+                <p class="fact">
+                    Виды животных, такие как коровы, овцы и куры, необходимы для сельского хозяйства и продовольственной безопасности. Эти животные обеспечивают нас мясом, молочными продуктами и яйцами, что является важной частью нашего питания. Однако, с другой стороны, ведение сельского хозяйства вызывает проблемы с экосистемой и животноводством, что требует перехода к более устойчивым практикам.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="img_11.png" alt="Робот-динозавр">
+            </div>
+        </div>
+
+        <div class="text-image-container">
+            <div class="image-content">
+                <img src="img_12.png" alt="Собака-поводырь">
+            </div>
+            <div class="text-content">
+                <h3>4. Защитные функции</h3>
+                <p class="fact">
+                    Некоторые виды животных, такие как собаки-поводыри и служебные собаки, помогают людям с ограниченными возможностями. Они обеспечивают физическую и эмоциональную поддержку, учебные программы с использованием животных развивают инклюзивные подходы. Питомцы могут улучшать качество жизни и помогать в социальной адаптации.
+                </p>
+            </div>
+        </div>
+
+        <div class="text-image-container">
+            <div class="text-content">
+    <h3>5. Проблемы, связанные с владением животными</h3>
+                <p class="fact">
+                    Несмотря на многочисленные плюсы, существуют и проблемы, связанные с потребностью людей в животных. Одна из них — это недостаточная осведомлённость о правильном обращении с питомцами. Многие люди не осознают, что животные требуют заботы, внимания и ресурсов. Это может приводить к частым случаям, связанным с отказом от животных и перегрузкой приютов.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="img_13.png" alt="Проблемы с животными">
+            </div>
+        </div>
+
+        <div class="text-image-container">
+            <div class="image-content">
+                <img src="img_14.png" alt="Пандемия и животные">
+            </div>
+            <div class="text-content">
+                <h3>Заключение</h3>
+                <p class="fact">
+                    Животные играют важную роль в жизни человека, выполняя множество функций — от эмоциональной поддержки до практического применения в сельском хозяйстве. Однако с этими возможностями связаны и определённые проблемы, требующие внимания и ответственности. Чтобы сохранить крепкую связь между людьми и животными, необходимо проводить образовательные программы, повышать осведомлённость и способствовать гуманному отношению к животным. Таким образом, мы сможем создать более гармоничное и ответственное соседство с представителями животного мира.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+  <h2>Их причины существования и значение</h2>
+ <div class="fade-in left">
+    <h3 onclick="toggleInformation('info1')">А вы знали? (Кликните для информации)</h3></div>
+    <div id="info1" class="content">Животные занимают важное место в жизни человека. С их помощью люди находят эмоциональную поддержку, учатся ответственности и получают возможность наладить контакт с природой. Существует множество видов животных, и каждое из них выполняет свою уникальную роль в нашем обществе и экосистеме. Разберёмся, какие потребности удовлетворяют различные виды животных и какие проблемы они помогают решать!</div>
+ <div class="fade-in left">
+    <h3 onclick="toggleInformation('info2')">И также.. (Кликните для информации)</h3></div>
+    <div id="info2" class="content">Несмотря на многочисленные плюсы, существуют и проблемы, связанные с потребностью людей в животных. Одна из них — это недостаточная осведомлённость о правильном обращении с питомцами. Многие люди не осознают, что животные требуют заботы, внимания и ресурсов. Это может приводить к частым случаям, связанным с отказом от животных и перегрузкой приютов.</div>
+ <div class="fade-in left">
+    <h3 onclick="toggleInformation('info3')">И в конце концов... (Кликните для информации)</h3></div>
+
+    <div id="info3" class="content">Животные играют важную роль в жизни человека, выполняя множество функций — от эмоциональной поддержки до практического применения в сельском хозяйстве. Однако с этими возможностями связаны и определённые проблемы, требующие внимания и ответственности. Чтобы сохранить крепкую связь между людьми и животными, необходимо проводить образовательные программы, повышать осведомлённость и способствовать гуманному отношению к животным. Таким образом, мы сможем создать более гармоничное и ответственное соседство с представителями животного мира.</div>
+
+
+
+
+<center>
+ <button class="prev-button" onclick="goToPreviousPage()">Назад</button>
+  <button class="next-button" onclick="goToNextPage()">Далее</button>
+
+
+</center>
+    <script>
+        // Скрипт для плавной прокрутки к содержимому
+        function scrollToContent() {
+            const content = document.getElementById('content');
+            content.scrollIntoView({ behavior: 'smooth' }); // Плавная прокрутка к содержимому
+        }
+  // Скрипт для перехода на другую страницу (например, "next-создатели — копия.html")
+        function goToNextPage() {
+            window.location.href = "создатели — копия — копия — копия.html"; // Замените "next-page.html" на нужное вам URL
+        }
+function goToPreviousPage() {
+    window.location.href = "главная — копия.html"; // Замените на нужный вам URL для "Назад"
+}
+
+        // Скрипт для открытия и закрытия бокового меню
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            menu.classList.toggle('open'); // Переключение класса 'open'
+        }
+ 
+  function toggleInformation(infoId) {
+            const content = document.getElementById(infoId);
+            // Проверяем, виден ли контент или скрыт
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block'; // Показываем информацию
+            } else {
+                content.style.display = 'none'; // Прячем информацию
+            }
+        }
+
+        // Убедимся, что контент изначально скрыт
+        document.querySelectorAll('.content').forEach(content => {
+            content.style.display = 'none';
+        });
+
+
+document.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.fade-in'); // Получаем элементы с классом fade-in
+
+    elements.forEach(function(element) {
+        const rect = element.getBoundingClientRect(); // Получаем координаты элемента
+
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            // Проверяем, если элемент виден в области просмотра
+            element.classList.add('visible'); // Добавляем класс visible для анимации
+        }
+    });
+});
+
+    </script>
+</body>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div>
+        <a href="#">Главная</a>
+
+        <a href="#">О нас</a>
+<p>
+    </div>
+    <span>Наш сайт связан с робото-животными, стремящийся повышать осведомленность о новых технологиях и их применения в жизни человека.</span>
+    <div class="social-icons">
+        <a href="https://telegram.org" target="_blank" style="color: #bbb;">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+        <a href="https://vk.com" target="_blank" style="color: #bbb;">
+            <i class="fab fa-vk"></i>
+        </a>
+       
+    </div>
+</div>
+</html>

@@ -1,0 +1,612 @@
+
+ 
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<style>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+color: #333;
+}
+
+h2 {
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between; /* Размещаем баннер и информацию по бокам */
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+}
+
+.contact-info {
+    flex: 1; /* Занимает доступное пространство */
+    margin-right: 20px; /* Отступ между информацией и баннером */
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.banner {
+    width: 200px; /* Фиксированная ширина баннера */
+    background: linear-gradient( #bbb, #aaa);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden; /* Для защиты от переполнения */
+}
+
+.banner-content {
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    animation: slideIn 1.5s ease-in-out infinite alternate; /* Анимация для баннера */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+  /* Стили для бокового меню */
+        .menu {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 0;
+            left: -250px; /* Скрыто слева */
+            width: 250px; /* Ширина меню */
+            height: 100%; /* Высота меню */
+
+            background-color: #333; /* Цвет фона меню */
+            color: white; /* Цвет текста в меню */
+            transition: left 0.3s; /* Плавный переход */
+            z-index: 1000; /* Находится поверх других элементов */
+        }
+
+        .menu.open {
+            left: 0; /* Меню открыто */
+        }
+
+        .menu ul {
+            list-style: none; /* Убираем маркеры списков */
+            padding: 0; /* Убираем отступы */
+        }
+
+        .menu ul li {
+            padding: 15px; /* Отступы для элементов списка */
+        }
+
+        .menu ul li a {
+            color: white; /* Цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .menu .close-btn {
+            cursor: pointer; /* Курсор в виде руки */
+            padding: 15px; /* Отступы для кнопки закрытия */
+            text-align: right; /* Выравнивание вправо */
+        }
+
+        .menu .close-btn:hover {
+            color: #FFD700; /* Цвет текста при наведении */
+        }
+
+        /* Иконка открытия меню (три точки) */
+        .menu-toggle {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 20px; /* Отступ от верха */
+            left: 20px; /* Отступ от левой стороны */
+            cursor: pointer; /* Курсор в виде руки */
+            z-index: 1001; /* Находится над меню */
+            font-size: 30px; /* Размер иконки */
+            color: #333; /* Цвет иконки */
+        }
+.next-button {
+    display: block;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px auto;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+        .next-button:hover {
+            background-color: #bbb; /* Цвет кнопки при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        .next-button:active {
+            transform: scale(0.95); /* Уменьшение кнопки при нажатии */
+        }
+
+
+.footer .social-icons {
+    display: flex; /* Используем flexbox для выравнивания иконок */
+    justify-content: center; /* Центрируем иконки */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.footer .social-icons a {
+    margin: 0 10px; /* Отступ между иконками */
+    font-size: 20px; /* Размер иконок */
+    color: #bbb; /* Цвет иконок по умолчанию */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+.footer .social-icons a:hover {
+    color: #fff; /* Изменение цвета иконок при наведении */
+}
+
+a {
+    color: rgba(255, 255, 255, 0.6); /* Установка цвета ссылок на белый */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+}
+.footer {
+    background-color: #333;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 50px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+.reviews-section {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.reviews-container {
+    margin: 20px 0;
+}
+
+.review {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.nav-button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+  .reviews-section {
+            max-width: 600px;
+            padding: 20px;
+            margin: 20px auto;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .reviews-container {
+            margin: 20px 0;
+        }
+
+        .review {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .review-button {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .review-button:hover {
+            background-color: #0056b3;
+        }
+
+        #modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        #modal img {
+            max-width: 100%;
+        }
+
+
+.reviews-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.review {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes slide {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.review {
+    animation: slide 10s infinite alternate;
+}
+
+
+
+
+    }
+        textarea {
+            width: 100%;
+            height: 200px;
+            resize: none;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            background-color: #9e9e9e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5b5959;
+        }
+
+
+  .feedback-container-3sh44g4848 { /* Измененный класс */
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+</style>
+
+
+
+
+
+
+
+<body>
+    <!-- Иконка для открытия меню (три точки) -->
+    <div class="menu-toggle" onclick="toggleMenu()">&#8230;</div>
+
+    <!-- Боковое меню -->
+    <div class="menu" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖️</div>
+        <ul>
+           
+
+<li><a href="главная — копия.html">Главная</a></li>
+            <li><a href="создатели — копия — копия — копия.html">Виды робото-животных</a></li>
+            <li><a href="калин — копия (2).html">Назначение робото-животных</a></li>
+            
+<li><a href="register.html">Регистрация</a></li>
+
+
+        </ul>
+    </div>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<body>
+
+
+
+
+
+    <div class="container">
+        <header>
+            <h1>О нас</h1>
+            <p>Добро пожаловать на сайт "Виртуальные Животные" — уникальную платформу, где виртуальная природа оживает! Мы создали это пространство для всех, кто любит животных и хочет узнать о них больше. У Вас есть возможность познакомиться с различными видами виртуальных питомцев, которые сделают наше времяпрепровождение увлекательным и познавательным.
+
+На нашем сайте вы найдете множество виртуальных животных, каждый из которых обладает уникальной личностью и поведением. Мы верим, что виртуальные животные могут принести радость и уют в нашу жизнь.</p>
+        </header>
+ <div class="fade-in left">
+        <section class="content">
+            <aside class="banner">
+                <div class="banner-content">
+                    Присоединяйтесь к нам сегодня!
+                </div>
+            </aside>
+
+            <div class="contact-info">
+                <h2>Контактная информация</h2>
+                <p><strong>Email:</strong> example@example.com</p>
+                <p><strong>Телефон:</strong> +7 (000) 000-0000</p>
+            </div>
+        </section>
+    </div>
+  <button class="next-button" onclick="goToNextPage()">Назад</button>
+
+
+
+
+
+    <script>
+        // Скрипт для плавной прокрутки к содержимому
+        function scrollToContent() {
+            const content = document.getElementById('content');
+            content.scrollIntoView({ behavior: 'smooth' }); // Плавная прокрутка к содержимому
+        }
+
+        // Скрипт для перехода на другую страницу (например, "next-создатели — копия.html")
+        function goToNextPage() {
+            window.location.href = "главная — копия.html"; // Замените "next-page.html" на нужное вам URL
+        }
+
+        // Скрипт для открытия и закрытия бокового меню
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            menu.classList.toggle('open'); // Переключение класса 'open'
+        }
+function openModal(creator) {
+    let modal = document.getElementById("modal");
+    let modalPhoto = document.getElementById("modal-photo");
+    let modalName = document.getElementById("modal-name");
+    let modalInfo = document.getElementById("modal-info");
+
+    // Указание данных для каждого создателя
+    if (creator === 'creator1') {
+        modalPhoto.src = "creator1.jpg";
+        modalName.textContent = "Иван Иванов";
+        modalInfo.textContent = "Иван — ведущий разработчик в команде создания робо-зверей.";
+    } else if (creator === 'creator2') {
+        modalPhoto.src = "creator2.jpg";
+        modalName.textContent = "Анна Смирнова";
+        modalInfo.textContent = "Анна — талантливый дизайнер и архитектор роботов.";
+    } else if (creator === 'creator3') {
+        modalPhoto.src = "creator3.jpg";
+        modalName.textContent = "Петр Петров";
+        modalInfo.textContent = "Петр — специалист по программированию и искусственному интеллекту.";
+    }
+
+    // Показываем модальное окно
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    let modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    let modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+document.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.fade-in'); // Получаем элементы с классом fade-in
+
+    elements.forEach(function(element) {
+        const rect = element.getBoundingClientRect(); // Получаем координаты элемента
+
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            // Проверяем, если элемент виден в области просмотра
+            element.classList.add('visible'); // Добавляем класс visible для анимации
+        }
+    });
+});
+
+let currentReview = 0;
+const reviews = document.querySelectorAll('.review');
+
+function showReview(index) {
+    reviews.forEach((review, i) => {
+        review.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    currentReview = (currentReview === 0) ? reviews.length - 1 : currentReview - 1;
+    showReview(currentReview);
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    currentReview = (currentReview === reviews.length - 1) ? 0 : currentReview + 1;
+    showReview(currentReview);
+});
+
+// Инициализация
+showReview(currentReview);
+
+
+
+
+
+
+
+
+ // Отзывы
+
+
+    </script>
+</div>
+</div>
+</div>
+
+
+<div class="reviews-container">
+    <div class="review 323883786">
+        <p>"Отличный сайт"</p>
+        <p><strong>- Иван Иванов</strong></p>
+    </div>
+    <div class="review 323883786">
+        <p>"Было интересно почитать"</p>
+        <p><strong>- Петр Петров</strong></p>
+    </div>
+    <div class="review 323883786">
+        <p>"Я узнала много нового"</p>
+        <p><strong>- Анастасия Сидорова</strong></p>
+    </div>
+</div>
+
+
+<center>
+<p> Обязательно просмотрите видео про роботов животных</p>
+
+      <iframe
+        width="720"
+        height="405"
+        src="https://rutube.ru/play/embed/f8def8f5326777568bbea2a190ad221e"
+        frameBorder="0"
+        allow="clipboard-write; autoplay"
+        webkitAllowFullScreen
+        mozallowfullscreen
+        allowFullScreen
+      ></iframe>
+    
+
+</center>
+
+
+
+
+<div class="feedback-container-3sh44g4848">
+    <h2>Оставьте ваш отзыв</h2>
+    <textarea id="feedbackInput" placeholder="Ваш отзыв..."></textarea>
+    <button id="submitButton">Отправить</button>
+    <div id="responseMessage" style="margin-top: 40px;"></div>
+</div>
+
+<script>
+    document.getElementById('submitButton').onclick = function() {
+        const feedback = document.getElementById('feedbackInput').value;
+
+        fetch('https://script.google.com/macros/s/AKfycbxU4DW-dSBysK7FzdNfdNM2UR_xd665JgvQz3Gd7khUKD2Efx2m15d2Mzkunz0avHKd/exec', { // Ваш URL
+            method: 'POST',
+            body: new URLSearchParams({ feedback: feedback })
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('responseMessage').innerText = data;
+            document.getElementById('feedbackInput').value = ''; // Очистим поле ввода
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            document.getElementById('responseMessage').innerText = 'Произошла ошибка при отправке отзыва.';
+        });
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div>
+        <a href="#">Главная</a>
+
+        <a href="#">О нас</a>
+<p>
+    </div>
+    <span>Наш сайт связан с робото-животными, стремящийся повышать осведомленность о новых технологиях и их применения в жизни человека.</span>
+    <div class="social-icons">
+        <a href="https://telegram.org" target="_blank" style="color: #bbb;">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+        <a href="https://vk.com" target="_blank" style="color: #bbb;">
+            <i class="fab fa-vk"></i>
+        </a>
+       
+    </div>
+</div>
+
+</html>

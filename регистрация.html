@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <style>
+        /* Общие стили */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ffffff, #f0f0f0); /* Градиент от белого к светло-серому */
+        }
+ 
+     
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Стили для меню */
+          /* Стили для бокового меню */
+        .menu {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 0;
+            left: -250px; /* Скрыто слева */
+            width: 250px; /* Ширина меню */
+            height: 100%; /* Высота меню */
+
+            background-color: #333; /* Цвет фона меню */
+            color: white; /* Цвет текста в меню */
+            transition: left 0.3s; /* Плавный переход */
+            z-index: 1000; /* Находится поверх других элементов */
+        }
+
+        .menu.open {
+            left: 0; /* Меню открыто */
+        }
+
+        .menu ul {
+            list-style: none; /* Убираем маркеры списков */
+            padding: 0; /* Убираем отступы */
+        }
+
+        .menu ul li {
+            padding: 15px; /* Отступы для элементов списка */
+        }
+
+        .menu ul li a {
+            color: white; /* Цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .menu .close-btn {
+            cursor: pointer; /* Курсор в виде руки */
+            padding: 15px; /* Отступы для кнопки закрытия */
+            text-align: right; /* Выравнивание вправо */
+        }
+
+        .menu .close-btn:hover {
+            color: #FFD700; /* Цвет текста при наведении */
+        }
+
+        /* Иконка открытия меню (три точки) */
+        .menu-toggle {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 20px; /* Отступ от верха */
+            left: 20px; /* Отступ от левой стороны */
+            cursor: pointer; /* Курсор в виде руки */
+            z-index: 1001; /* Находится над меню */
+            font-size: 30px; /* Размер иконки */
+            color: #333; /* Цвет иконки */
+        }
+
+        /* Стили для контента */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Стили для формы регистрации */
+        .registration-form {
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .registration-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .registration-form input:hover {
+            border-bottom: 2px solid #696969;
+        }
+
+        .registration-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .registration-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+    /* Определяем класс 3939 для ссылки */
+        .link-3939 {
+            color: black; /* Цвет ссылки черный */
+            text-decoration: none; /* Убираем подчеркивание */
+            margin-top: 10px; /* Отступ сверху для ссылки */
+        }
+        .link-3939:hover {
+            text-decoration: underline; /* Подчеркивание при наведении (по желанию) */
+        }
+
+    </style>
+</head>
+
+
+ <body>
+    <!-- Иконка для открытия меню (три точки) -->
+    <div class="menu-toggle" onclick="toggleMenu()">&#8230;</div>
+
+    <!-- Боковое меню -->
+
+    <div class="menu" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖️</div>
+        <ul>
+<li><a href="главная — копия.html">Главная</a></li>
+            <li><a href="создатели — копия — копия — копия.html">Виды робото-животных</a></li>
+            <li><a href="калин — копия (2).html">Назначение робото-животных</a></li>
+            <li><a href="oнас1.html">О нас</a></li>
+
+        </ul>
+    </div>
+<center>
+        <div class="site-description">
+            <h2>Добро пожаловать на наш сайт!</h2>
+            <p>Пожалуйста, заполните форму регистрации ниже.</p>
+        </div>
+
+        <form class="registration-form" id="registrationForm">
+            <input type="text" id="firstName" placeholder="Имя" required>
+            <input type="text" id="lastName" placeholder="Фамилия" required>
+            <input type="tel" id="phone" placeholder="Номер телефона" required>
+            <input type="text" id="city" placeholder="Город" required>
+            <input type="date" id="dob" placeholder="Дата рождения" required>
+            <input type="submit" value="Зарегистрироваться">
+   <a href="авторизация.html" class="link-3939">Авторизация</a> <!-- Ссылка "Авторизация" -->
+        </form>
+
+</center>
+    </div>
+
+
+    <script>
+        // Обработчик события для формы регистрации
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Предотвращает стандартное поведение отправки формы
+
+            const dob = new Date(document.getElementById("dob").value);
+            const today = new Date();
+
+            // Проверяем, совпадает ли дата рождения с текущей датой
+            if (dob.getDate() === today.getDate() && dob.getMonth() === today.getMonth()) {
+
+                alert("С Днем Рождения!");
+                window.location.href = "главная — копия.html"; // Переход на новую страницу
+            } else {
+                alert("Спасибо за регистрацию. Вы будете перенаправлены на главную страницу.");
+                window.location.href = "главная — копия.html"; // Переход на главную страницу
+            }
+        });
+
+
+
+        // Скрипт для плавной прокрутки к содержимому
+        function scrollToContent() {
+            const content = document.getElementById('content');
+            content.scrollIntoView({ behavior: 'smooth' }); // Плавная прокрутка к содержимому
+        }
+
+        // Скрипт для перехода на другую страницу (например, "next-создатели — копия.html")
+        function goToNextPage() {
+            window.location.href = "калин — копия (2).html"; // Замените "next-page.html" на нужное вам URL
+        }
+
+        // Скрипт для открытия и закрытия бокового меню
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            menu.classList.toggle('open'); // Переключение класса 'open'
+        }
+function openModal(creator) {
+    let modal = document.getElementById("modal");
+    let modalPhoto = document.getElementById("modal-photo");
+    let modalName = document.getElementById("modal-name");
+    let modalInfo = document.getElementById("modal-info");
+
+    // Указание данных для каждого создателя
+    if (creator === 'creator1') {
+        modalPhoto.src = "breazeal_3.jpg";
+        modalName.textContent = "Синтия Бризил";
+        modalInfo.textContent = "Современная робототехника объединилась с искусственным интеллектом. Такие пионеры, как Синтия Бризил, разработали социальных роботов, которые могут взаимодействовать с людьми и учиться у них. Кто создал робототехнику с эмоциями и развитыми когнитивными способностями? Эти новаторы вывели робототехнику на новый уровень.";
+    } else if (creator === 'creator2') {
+        modalPhoto.src = "Construction-Quote-Slider-3-Turner-min.jpg";
+        modalName.textContent = "Компания Boston Dynamics и Sony";
+        modalInfo.textContent = "Среди основных создателей роботов-собак можно выделить две компании, которые внесли наибольший вклад в их развитие и популяризацию: Boston Dynamics и Sony. Обе компании проделали огромную работу, чтобы создать роботов-собак, выполненных с высоким качеством и удивительной функциональностью.";
+    } else if (creator === 'creator3') {
+        modalPhoto.src = "OIP (1).jpg";
+        modalName.textContent = "Компания Sonу";
+        modalInfo.textContent = "Известная своими потрясающими разработками в области электроники, также не осталась в стороне от создания роботов-собак. Они представили свою замечательную модель Aibo, которая стала одной из первых коммерчески доступных роботизированных собак.Aibo обладает современными технологиями и умеет взаимодействовать с людьми.";
+    }
+
+    // Показываем модальное окно
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    let modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    let modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+    </script>
+</body>
+
+</html>
+

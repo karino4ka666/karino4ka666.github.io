@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баннер - Познакомьтесь с робото-животными</title>
+    <style>
+       body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+zoom: 0.8; /* Уменьшает весь контент до 80% от оригинального размера */
+
+
+   
+   
+}
+
+        /* Стили для баннера */
+        .banner {
+            height: 60vh; /* Высота баннера */
+            display: flex; /* Флекс-контейнер */
+            flex-direction: column; /* Вертикальная ориентация */
+            justify-content: center; /* Центрируем по вертикали */
+            align-items: center; /* Центрируем по горизонтали */
+            position: relative; /* Позиционирование */
+            overflow: hidden; /* Обрезка содержимого */
+            background-color: #ccc; /* Цвет фона баннера */
+            color: white; /* Цвет текста в баннере */
+  position: relative; /* Убедитесь, что у родительского элемента есть относительное позиционирование */
+        }
+
+        .slider {
+            display: flex; /* Флекс-контейнер для слайдера */
+            animation: slide 10s infinite; /* Анимация слайдов */
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-100%);
+            }
+
+            45% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-200%);
+            }
+
+            70% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .slide {
+            min-width: 100%; /* Каждый слайд занимает 100% ширины */
+            transition: opacity 0.5s ease; /* Плавный переход */
+        }
+
+      .banner {
+    position: relative; /* Устанавливаем относительно для вложенных элементов */
+}
+
+.slider img {
+    width: 100%; /* Делает изображения адаптивными */
+    height: auto; /* Сохраняем пропорции изображений */
+    opacity: 0.7;
+}
+
+.banner-title {
+    position: absolute;
+     background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+            color: #ffffff; /* Цвет текста */
+            padding: 15px 25px; /* Отступы */
+            border-radius: 10px; /* Закругленные углы */
+            text-align: center; /* Центрируем текст */
+            margin: 20px 0; /* Отступ сверху и снизу */
+            font-size: 2rem; /* Увеличенный размер шрифта */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+
+.button {
+    margin-top: 20px; /* Отступ сверху для кнопки */
+}
+
+        .button {
+            position: absolute; /* Позиционирование для кнопки */
+            bottom: 20px; /* Отступ от низа */
+            background-color: white; /* Цвет фона кнопки */
+            color: #333; /* Цвет текста */
+            border: none; /* Убираем границы */
+            padding: 15px 30px; /* Отступы */
+            font-size: 1.2em; /* Размер шрифта */
+            cursor: pointer; /* Курсор в виде руки */
+            border-radius: 5px; /* Скругление углов кнопки */
+            transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
+        }
+
+        .button:hover {
+            background-color: #bbb; /* Цвет кнопки при наведении */
+
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        /* Оформление галереи роботов-животных */
+      .image-gallery {
+            padding: 40px;
+            background-color: #ffffff; /* Цвет фона галереи */
+            border-radius: 10px; /* Скругленные углы */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            margin: 20px; /* Отступы */
+        }
+
+        .image-gallery h2 {
+            text-align: center; /* Центрированное выравнивание */
+            color: #333; /* Цвет заголовка */
+            margin-bottom: 20px; /* Отступ снизу */
+text-decoration: underline; /* Подчеркнуть текст */
+    text-decoration-color: #333; /* Цвет подчеркивания */
+        }
+
+        .images {
+            display: flex; /* Флекс-контейнер */
+            flex-direction: column; /* Вертикально */
+        }
+
+        .image-container {
+            display: flex; /* Флекс-контейнер для изображений и текста */
+            align-items: center; /* Вертикальное выравнивание */
+            margin: 20px 0; /* Отступы сверху и снизу */
+
+        }
+
+        /* Шахматное оформление с учетом четности */
+        .image-container:nth-child(even) {
+            flex-direction: row-reverse; /* Меняем порядок для четных элементов */
+        }
+
+        .image-container img {
+            width: 300px; /* Фиксированная ширина изображения */
+            height: auto; /* Автоматическая высота */
+            border-radius: 10px; /* Скругление углов */
+            margin: 0 20px; /* Отступы между изображением и текстом */
+        }
+
+        /* Описание наложением на изображении */
+        .overlay {
+            position: relative; /* Позиционирование для наложения */
+        }
+
+        .overlay-text {
+            display: flex; /* Флекс-контейнер для центрирования текста */
+            justify-content: center; /* Горизонтальное выравнивание */
+            align-items: center; /* Вертикальное выравнивание */
+            padding: 10px; /* Отступы вокруг текста */
+            background-color: #ffffff; /* Фон наложения */
+            color: #333;
+            border-radius: 10px; /* Скругление углов */
+            font-size: 1em; /* Размер текста */
+            transition: transform 0.3s ease, color 0.3s; /* Плавный переход для размера и цвета */
+        }
+
+        .overlay-text:hover {
+            transform: scale(1.1); /* Увеличение текста при наведении */
+            color: rgba(0, 0, 0, 0.6); /* Цвет текста при наведении */
+        }
+
+
+        /* Стили для кнопки "Далее" */
+       .next-button {
+    display: block;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px auto;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+        .next-button:hover {
+            background-color: #bbb; /* Цвет кнопки при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        .next-button:active {
+            transform: scale(0.95); /* Уменьшение кнопки при нажатии */
+        }
+
+        /* Стили для бокового меню */
+        .menu {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 0;
+            left: -250px; /* Скрыто слева */
+            width: 250px; /* Ширина меню */
+            height: 100%; /* Высота меню */
+
+            background-color: #333; /* Цвет фона меню */
+            color: white; /* Цвет текста в меню */
+            transition: left 0.3s; /* Плавный переход */
+            z-index: 1000; /* Находится поверх других элементов */
+        }
+
+        .menu.open {
+            left: 0; /* Меню открыто */
+        }
+
+        .menu ul {
+            list-style: none; /* Убираем маркеры списков */
+            padding: 0; /* Убираем отступы */
+        }
+
+        .menu ul li {
+            padding: 15px; /* Отступы для элементов списка */
+        }
+
+        .menu ul li a {
+            color: white; /* Цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .menu .close-btn {
+            cursor: pointer; /* Курсор в виде руки */
+            padding: 15px; /* Отступы для кнопки закрытия */
+            text-align: right; /* Выравнивание вправо */
+        }
+
+        .menu .close-btn:hover {
+            color: #FFD700; /* Цвет текста при наведении */
+        }
+
+        /* Иконка открытия меню (три точки) */
+        .menu-toggle {
+            position: fixed; /* Фиксированное позиционирование */
+            top: 20px; /* Отступ от верха */
+            left: 20px; /* Отступ от левой стороны */
+            cursor: pointer; /* Курсор в виде руки */
+            z-index: 1001; /* Находится над меню */
+            font-size: 30px; /* Размер иконки */
+            color: #333; /* Цвет иконки */
+        }
+ul {
+    list-style-type: disc; /* Задает стиль маркера - обычные точки */
+    padding-left: 20px; /* Отступ для списка */
+    color: black; /* Цвет точек */
+}
+
+
+.creators {
+    display: flex;
+    justify-content: space-around; /* Выравниваем создателей по горизонтали */
+    flex-wrap: wrap; /* Позволяем переносить элементы на новые строки */
+}
+
+.creator {
+    cursor: pointer; /* Указываем, что элемент кликабелен */
+    text-align: center;
+    margin: 10px;
+}
+
+.avatar {
+    width: 100px; /* Размер фотографий */
+    height: 100px; /* Размер фотографий */
+    border-radius: 50%; /* Круглая форма */
+    transition: transform 0.3s; /* Плавная анимация */
+}
+
+.creator:hover .avatar {
+    transform: scale(1.1); /* Увеличиваем изображение при наведении */
+}
+
+.modal {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Включаем прокрутку если необходимо */
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Центрируем окно по вертикали */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина модального окна */
+    max-width: 600px; /* Максимальная ширина */
+    text-align: center; /* Центрируем текст */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+.modal-avatar {
+    width: 150px; /* Размер фотографии в модалке */
+    height: 150px; /* Размер фотографии в модалке */
+    border-radius: 50%; /* Круглая форма */
+}
+
+.close {
+    color: #aaa; /* Цвет для кнопки закрытия */
+    float: right; /* Правый верхний угол */
+
+    font-size: 28px;
+ font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black; /* Цвет при наведении */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Переход для анимации */
+}
+
+/* Анимация при наведении */
+h1:hover {
+    transform: scale(1.1); /* Увеличиваем текст при наведении */
+    color: #888; /* Меняем цвет текста при наведении */
+text-decoration: underline; /* Подчеркнуть текст */
+    text-decoration-color: #333; /* Цвет подчеркивания */
+}
+
+
+h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Переход для анимации */
+}
+
+/* Анимация при наведении */
+h2:hover {
+    transform: scale(1.1); /* Увеличиваем текст при наведении */
+    color: #888; /* Меняем цвет текста при наведении */
+}
+
+/* Подвал */
+        .footer {
+            background-color: #333; /* Черный цвет подвала */
+            color: rgba(255, 255, 255, 0.6);  /* Цвет текста подвала */
+            padding: 10px 0; /* Отступы в подвале */
+            text-align: center; /* Центрирование текста в подвале */
+   position: relative; /* Позиционирование */
+            margin-top: auto; /* Сдвинуть вниз, оставив пространство для содержимого */
+        }
+
+
+
+
+ .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0; /* Светло-серый фон */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Поверх всех элементов */
+            display: none; /* Скрыто по умолчанию */
+        }
+        .popup h1 {
+            margin: 0;
+            color: #333; /* Темно-серый текст */
+        }
+        .close-btn {
+            background-color: #333; /* Темно-серый для кнопки */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .close-btn:hover {
+            background-color: #555; /* Более светлый серый при наведении */
+        }
+
+
+.footer .social-icons {
+    display: flex; /* Используем flexbox для выравнивания иконок */
+    justify-content: center; /* Центрируем иконки */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.footer .social-icons a {
+    margin: 0 10px; /* Отступ между иконками */
+    font-size: 20px; /* Размер иконок */
+    color: #bbb; /* Цвет иконок по умолчанию */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+.footer .social-icons a:hover {
+    color: #fff; /* Изменение цвета иконок при наведении */
+}
+
+a {
+    color: rgba(255, 255, 255, 0.6); /* Установка цвета ссылок на белый */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+}
+
+
+.jumping-text {
+    display: inline-block;
+    animation: jump 1s infinite alternate;
+    margin-top: 10px;
+    padding: 10px 10px;
+    border: 2px solid #555;
+    border-radius: 5px;
+}
+
+таблица стилей агента пользователя
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+
+
+   /* Стили для уведомления */
+        .notification {
+            position: fixed; /* Зафиксированное для правильного выравнивания */
+            top: 20px; /* Отступ от верхней части страницы */
+            right: 20px; /* Отступ от правой части страницы */
+            background-color: #ffffff; /* Цвет фона */
+            border: 1px solid #ccc; /* Рамка */
+            border-radius: 8px; /* Закругленные углы */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+            display: none; /* Изначально скрыто */
+            padding: 15px; /* Отступ внутри уведомления */
+            animation: fadeIn 0.5s forwards; /* Анимация появления */
+            z-index: 1000; /* Чтобы уведомление отображалось поверх других элементов */
+            width: 300px; /* Ширина уведомления */
+        }
+
+        .notification img {
+            max-width: 100%; /* Масштабирование изображения под размер уведомления */
+            border-radius: 4px; /* Закругленные углы для изображения */
+        }
+
+        .notification .close-btn {
+            background: none; /* Убираем фон кнопки */
+            border: none; /* Убираем рамку */
+            color: #888; /* Цвет текста кнопки */
+            cursor: pointer; /* Указываем, что это кликабельный элемент */
+            font-size: 16px; /* Размер шрифта */
+            position: absolute; /* Позиционирование для размещения в углу */
+            top: 10px; /* Отступ от верхней границы */
+            right: 10px; /* Отступ от правой границы */
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Начальная прозрачность */
+                transform: translateY(-20px); /* Начальная позиция немного выше */
+            }
+            to {
+                opacity: 1; /* Полная непрозрачность */
+                transform: translateY(0); /* Конечное положение */
+            }
+        }
+
+
+   /* Стили для кнопки "Наверх" */
+        .scroll-to-top {
+            position: fixed; /* Фиксированное позиционирование */
+            bottom: 20px; /* Отступ снизу */
+            right: 20px; /* Отступ справа */
+            display: none; /* Изначально скрыто */
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+            color: white; /* Цвет текста */
+            border: none; /* Убираем рамку */
+            border-radius: 25px; /* Закругленные углы */
+            padding: 10px 15px; /* Отступы */
+            cursor: pointer; /* Указываем, что кнопка кликабельна */
+            font-size: 14px; /* Размер шрифта */
+            opacity: 0.7; /* Прозрачность */
+            transition: opacity 0.3s; /* Плавный переход для прозрачности */
+        }
+
+        .scroll-to-top:hover {
+            opacity: 1; /* Прозрачность при наведении */
+        }
+
+
+ .fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+    }
+
+
+
+
+
+
+
+
+ .thh-300 {
+            display: flex; /* Используем flex для коллажа */
+            align-items: center; /* Центрируем по вертикали */
+            justify-content: space-between; /* Пространство между элементами */
+            width: 100%; /* Ширина коллажа */
+        }
+
+        .thh-301 {
+            display: flex; /* Flex для изображений */
+            gap: 15px; /* Промежуток между изображениями */
+        }
+
+        .thh-302 {
+            width: 150px; /* Ширина изображения */
+            height: 150px; /* Высота изображения */
+            overflow: hidden; /* Скрываем переполнение */
+            border-radius: 10px; /* Закругленные углы */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+            transition: transform 0.3s ease; /* Плавный переход */
+        }
+
+        .thh-302 img {
+            width: 100%; /* Полная ширина изображения */
+            height: 100%;
+            object-fit: cover; /* Заполнение изображением без искажений */
+        }
+
+        .thh-302:hover {
+            transform: scale(1.1); /* Увеличение при наведении */
+        }
+
+        .thh-303 {
+            flex: 1; /* Занять оставшееся пространство */
+            margin-left: 20px; /* Отступ слева от изображений */
+        }
+
+        .thh-303 h2 {
+            font-size: 24px; /* Размер заголовка */
+            margin: 0 0 10px; /* Отступы снизу */
+        }
+
+        .thh-303 p {
+            font-size: 16px; /* Размер текста */
+            line-height: 1.5; /* Межстрочный интервал */
+        }
+
+
+
+
+
+    
+
+   .animated-box {
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+        font-size: 24px; /* Размер текста */
+        font-weight: bold; /* Толщина текста */
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+
+
+
+.fade-in {
+    opacity: 0; /* Элементы изначально скрыты */
+    transform: translateX(100px); /* Сдвинуты вправо на 100px */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+}
+
+.fade-in.left {
+    transform: translateX(-100px); /* Для элементов слева сдвигаем влево */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Полная непрозрачность при добавлении класса visible */
+    transform: translateX(0); /* Возвращаем его в исходное положение */
+}
+
+
+
+
+
+
+
+.info-block {
+
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.info-block h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info-item {
+    flex: 1 1 calc(45% - 10px);
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    opacity: 0; /* Полностью прозрачный */
+    transform: translateY(20px); /* Сдвинут вниз */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.info-item h3 {
+    color: #333; /* Цвет заголовка */
+}
+
+.info-item p {
+    color: #333; /* Цвет текста */
+}
+
+.info-item.visible {
+    opacity: 1; /* Показать элемент */
+    transform: translateY(0); /* Вернуть элемент в его позицию */
+}
+
+
+
+    </style>
+</head>
+
+  <div class="notification" id="notification">
+        <button class="close-btn" onclick="closeNotification()">✖️</button>
+        
+        <p>Добро пожаловать на наш сайт!</p>
+    </div>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<body>
+    <!-- Иконка для открытия меню (три точки) -->
+    <div class="menu-toggle" onclick="toggleMenu()">&#8230;</div>
+
+    <!-- Боковое меню -->
+
+    <div class="menu" id="sidebarMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖️</div>
+        <ul>
+            <li><a href="создатели — копия — копия — копия.html">Виды робото-животных</a></li>
+            <li><a href="калин — копия (2).html">Назначение робото-животных</a></li>
+            <li><a href="oнас.html">О нас</a></li>
+<li><a href="регистрация — копия.html">Регистрация</a></li>
+<li><a href="авторизация.html">Авторизация</a></li>
+        </ul>
+    </div>
+
+   <div class="hero" id="home">
+            <div class="slider"> <!-- Изменено имя класса с .slides на .slider -->
+                <div class="slide" style="background-image: url('https://via.placeholder.com/1920x1080/FF5733/FFFFFF?text=Слайд+1');"></div>
+                <div class="slide" style="background-image: url('https://via.placeholder.com/1920x1080/33FF57/FFFFFF?text=Слайд+2');"></div>
+                <div class="slide" style="background-image: url('https://via.placeholder.com/1920x1080/3357FF/FFFFFF?text=Слайд+3');"></div>
+            </div>
+
+
+
+ <div class="banner">
+    <div class="slider">
+
+
+
+        <div class="slide">
+            <img src="futuristic-half-robot-tiger_23-2151558840.jpg" alt="Робот-собака">
+        </div>
+        <div class="slide">
+            <img src="futuristic-half-robot-tiger_23-2151558875.jpg" alt="Робот-кошка">
+        </div>
+        <div class="slide">
+            <img src="futuristic-half-robot-tiger_23-2151558772.jpg" alt="Робот-птица">
+        </div>
+        <div class="slide">
+            <img src="img_robot_dinosaur.jpg" alt="Робот-динозавр">
+        </div>
+    </div>
+ 
+
+
+         
+    </div>
+</div>
+<center>
+
+  
+
+<div class="fade-in" style="margin-top: 50px;">
+
+    </div>
+</div>
+
+    <!-- Содержимое страницы после баннеров -->
+     <!-- Содержимое страницы после баннеров -->
+
+<div class="animation">
+   
+    <div class="animated-box" id="animatedText">1,000 удовлетворенных клиентов</div>
+</div>
+
+
+
+    <div id="content" style="padding: 20px;">
+        <div class="image-gallery">
+<div class="underline">
+
+
+ <div class="fade-in left">
+
+
+            <h2>Роботы-животные</h2>
+</div>
+            <div class="images">
+ <div class="fade-in left">
+                <div class="image-container">
+
+                    <img src="img.png" alt="Робот-собака">
+                    <div class="overlay-text">Робот-собака - Индивидуальные возможности: Например, Aibo от Sony - это не просто игрушка, а высокотехнологичный робот, который может выполнять команды, взаимодействовать с пользователями, распознавать лица и адаптироваться к поведению владельца.
+                     </ul> Использование в терапии: Роботы-собаки, как Aibo, участвуют в реабилитации пожилых людей и детей с особыми потребностями. Они могут обеспечить эмоциональную поддержку и улучшить социальные навыки.
+                       </ul> Обучение и развлечения: Роботы-собаки могут обучаться различным трюкам и играм, что делает их интересными для детей и взрослых. Они могут выполнять команды, такие как "сидеть", "лежать" и "кувырок".
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="img_2.png" alt="Робот-кошка">
+                    <div class="overlay-text">Робот-кошка - Интерактивность: Роботы-кошки, такие как Joy for All Companion Cat, созданы, чтобы взаимодействовать с пользователями, издавая звуки и реагируя на прикосновения. Они могут мурлыкать и двигать ушами, что создает иллюзию живого питомца.
+                        </ul>Терапевтическое применение: Эти устройства используются в терапии для пожилых людей и людей с деменцией. Научные исследования показывают, что взаимодействие с роботами-кошками может снижать уровень стресса и повышать общее эмоциональное состояние.
+                       </ul> Низкие затраты на уход: В отличие от настоящих кошек, роботы не требуют пищи, воды или ухода, что делает их идеальным выбором для людей, которые хотят питомца без много хлопот.
+                    </div>
+                </div>
+                <div class="image-container">
+
+                    <img src="img_6.png" alt="Робот-динозавр">
+                    <div class="overlay-text">Робот-динозавр - Образовательная цель: Роботы-динозавры, такие как RoboDinosaurs, проектируются с целью помочь детям изучить особенности поведения и анатомии динозавров. Они могут имитировать движения и звуки настоящих динозавров.
+                       </ul>Интерактивные выставки: Эти роботы часто используются в музеях и выставках, чтобы привлечь внимание и заинтересовать посетителей, создавая увлекательный опыт взаимодействия. </ul>
+                       Развитие робототехники: Создание роботов-динозавров помогает производить новые технологии и методы в области робототехники, а также в изучении биоразнообразия и эволюции. </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="next-button" onclick="goToNextPage()">Далее</button>
+    </div>
+</div>
+
+
+<div
+
+      
+       <div class="fade-in left">  
+<section class="info-block">
+  <div class="thh-300">
+        <div class="thh-301"> <!-- Объединяем изображения -->
+            <div class="thh-302"> <!-- Первое изображение -->
+                <img src="445-1.jpg" alt="Фото 1">
+            </div>
+            <div class="thh-302"> <!-- Второе изображение -->
+                <img src="TYULEN-a3-1-1024x683.jpg" alt="Фото 2">
+            </div>
+            <div class="thh-302"> <!-- Третье изображение -->
+                <img src="4222.jpg" alt="Фото 3">
+            </div>
+        </div>
+        <div class="thh-303">
+
+            <h2>Топ-3 самых крутых роботизированных животных последнего десятилетия представлен следующими моделями:
+</h2>
+            <p>Медуза Рободжелли (Robojelly).</p>
+            <p>Детеныш тюленя Паро (PARO).</p>
+<p>Роботизированные муравьи (BionicANTs).</p>
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+<p>
+
+
+
+<section class="info-block">
+             
+
+<center>
+  <div class="jumping-text">Узнайте также историю новаторов Робото-Творцов</div>
+      
+      </center> 
+
+        
+        <div class="creators">
+            <div class="creator" onclick="openModal('creator1')">
+                <img src="breazeal_3.jpg" alt="Создатель 1" class="avatar">
+                <span>Синтия Бризил - Искусственный интеллект и робототехника</span>
+            </div>
+            <div class="creator" onclick="openModal('creator2')">
+                <img src="Construction-Quote-Slider-3-Turner-min.jpg" alt="Создатель 2" class="avatar">
+                <span>Основные создатели  первых роботов-собак</span>
+            </div>
+            <div class="creator" onclick="openModal('creator3')">
+                <img src="OIP (1).jpg" alt="Создатель 3" class="avatar">
+                <span>Компания Sonу</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-photo" alt="Фотография создателя" class="modal-avatar">
+            <h2 id="modal-name">Имя Создателя</h2>
+            <p id="modal-info">Информация о создателе.</p>
+        </div>
+    </div>
+
+
+
+<section class="info-block">
+    <h2>Как этот сайт вам помогает?</h2>
+    <div class="info-container">
+        <div class="info-item item-1" data-delay="0.1">
+            <h3>Понимание взаимодействия</h3>
+            <p>Наш сайт учит о взаимодействии между животными и роботами, способы, которыми технологии помогают в уходе за питомцами.</p>
+        </div>
+        <div class="info-item item-2" data-delay="0.2">
+            <h3>Виртуальные помощники</h3>
+            <p>Вы можете узнать о виртуальных помощниках, которые помогают людям с уходом за животными.</p>
+        </div>
+        <div class="info-item item-3" data-delay="0.3">
+            <h3>Роботы для безопасности</h3>
+            <p>Исследуйте, как роботы используются для обеспечения безопасности домашних животных.</p>
+        </div>
+        <div class="info-item item-4" data-delay="0.4">
+            <h3>Технологии в обучении</h3>
+            <p>Узнайте, как технологии помогают в обучении животных различным трюкам и повиновению.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <script>
+        // Скрипт для плавной прокрутки к содержимому
+        function scrollToContent() {
+            const content = document.getElementById('content');
+            content.scrollIntoView({ behavior: 'smooth' }); // Плавная прокрутка к содержимому
+        }
+
+        // Скрипт для перехода на другую страницу (например, "next-создатели — копия.html")
+        function goToNextPage() {
+            window.location.href = "калин — копия (2).html"; // Замените "next-page.html" на нужное вам URL
+        }
+
+        // Скрипт для открытия и закрытия бокового меню
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            menu.classList.toggle('open'); // Переключение класса 'open'
+        }
+function openModal(creator) {
+    let modal = document.getElementById("modal");
+    let modalPhoto = document.getElementById("modal-photo");
+    let modalName = document.getElementById("modal-name");
+    let modalInfo = document.getElementById("modal-info");
+
+    // Указание данных для каждого создателя
+    if (creator === 'creator1') {
+        modalPhoto.src = "breazeal_3.jpg";
+        modalName.textContent = "Синтия Бризил";
+        modalInfo.textContent = "Современная робототехника объединилась с искусственным интеллектом. Такие пионеры, как Синтия Бризил, разработали социальных роботов, которые могут взаимодействовать с людьми и учиться у них. Кто создал робототехнику с эмоциями и развитыми когнитивными способностями? Эти новаторы вывели робототехнику на новый уровень.";
+    } else if (creator === 'creator2') {
+        modalPhoto.src = "Construction-Quote-Slider-3-Turner-min.jpg";
+        modalName.textContent = "Компания Boston Dynamics и Sony";
+        modalInfo.textContent = "Среди основных создателей роботов-собак можно выделить две компании, которые внесли наибольший вклад в их развитие и популяризацию: Boston Dynamics и Sony. Обе компании проделали огромную работу, чтобы создать роботов-собак, выполненных с высоким качеством и удивительной функциональностью.";
+    } else if (creator === 'creator3') {
+        modalPhoto.src = "OIP (1).jpg";
+        modalName.textContent = "Компания Sonу";
+        modalInfo.textContent = "Известная своими потрясающими разработками в области электроники, также не осталась в стороне от создания роботов-собак. Они представили свою замечательную модель Aibo, которая стала одной из первых коммерчески доступных роботизированных собак.Aibo обладает современными технологиями и умеет взаимодействовать с людьми.";
+    }
+
+    // Показываем модальное окно
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    let modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    let modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+  // Функция для показа уведомления
+        function showNotification() {
+            // Проверяем, было ли уведомление уже закрыто
+            if (!localStorage.getItem('notificationClosed')) {
+                document.getElementById('notification').style.display = 'block'; // Показываем уведомление
+            }
+        }
+
+        // Функция для закрытия уведомления
+        function closeNotification() {
+            document.getElementById('notification').style.display = 'none'; // Прячем уведомление
+            localStorage.setItem('notificationClosed', 'true'); // Сохраняем состояние в localStorage
+        }
+
+        // Вызываем функцию для показа уведомления при загрузке страницы
+        window.onload = showNotification;
+
+   // Функция для прокрутки к верху страницы
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Плавная прокрутка
+        }
+
+        // Обработка прокрутки страницы
+        window.onscroll = function() {
+            const button = document.querySelector('.scroll-to-top');
+            // Отображение кнопки, когда пользователь прокручивает вниз на 300 пикселей
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.style.display = 'block'; // Показываем кнопку
+            } else {
+                button.style.display = 'none'; // Скрываем кнопку
+            }
+        };
+
+
+
+
+  const slides = document.querySelector('.slider'); // Изменено имя класса с .slides на .slider
+        const totalSlides = document.querySelectorAll('.slide').length;
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+         window.addEventListener('load', () => {
+        const fadeElement = document.querySelector('.fade-in');
+        fadeElement.classList.add('visible');
+    });
+
+
+
+
+ const texts = [
+        "1,000 удовлетворенных клиентов нашим сайтом",
+        "Более 5,000 добавили наш сайт в избранные",
+        "96% посетителей рекомендуют нас",
+        "Наши посетители — это 10,000 счастливых лиц",
+        
+    ];
+
+    let currentIndex = 0;
+
+    function changeText() {
+        const animatedBox = document.getElementById("animatedText");
+        
+        // Меняем текст
+        animatedBox.style.opacity = 0; // Сначала убываем текст
+        
+        setTimeout(() => {
+            animatedBox.textContent = texts[currentIndex]; // Меняем текст
+            animatedBox.style.animation = 'fadeIn 0.5s forwards'; // Появляем текст
+            currentIndex = (currentIndex + 1) % texts.length; // Следующий текст
+        }, 500); // Задержка перед сменой текста равна 500мс (время анимации убывания)
+    }
+
+    setInterval(changeText, 3000); // Смена текста каждые 3 секунды
+    changeText(); // Начинаем с первого текста
+
+
+
+
+
+document.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.fade-in'); // Получаем элементы с классом fade-in
+
+    elements.forEach(function(element) {
+        const rect = element.getBoundingClientRect(); // Получаем координаты элемента
+
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            // Проверяем, если элемент виден в области просмотра
+            element.classList.add('visible'); // Добавляем класс visible для анимации
+        }
+    });
+});
+
+
+// script.js
+
+const infoItems = document.querySelectorAll('.info-item'); // Получаем все информационные элементы
+
+function animateItems() {
+    infoItems.forEach((item, index) => {
+        const delay = item.dataset.delay; // Получаем задержку для анимации
+        setTimeout(() => {
+            item.classList.add('visible'); // Добавляем класс для появления
+        }, delay * 1000); // Умножаем на 1000 для миллисекунд
+    });
+}
+
+// Запуск анимации при загрузке страницы
+window.onload = () => {
+    animateItems();
+};
+
+    </script>
+
+<p>
+<p>
+
+
+
+<p> Просмотрите интересный видеоролик обо всех существующих робото-животных </p>
+      <iframe
+        width="720"
+        height="405"
+        src="https://rutube.ru/play/embed/c797233cecdf7ae53a118c7bd5c26656"
+        frameBorder="0"
+        allow="clipboard-write; autoplay"
+        webkitAllowFullScreen
+        mozallowfullscreen
+        allowFullScreen
+      ></iframe>
+    
+
+
+
+
+
+
+
+</body>
+<div class="footer">
+    <div>
+        <a href="#">Главная</a>
+
+        <a href="#">О нас</a>
+<p>
+    </div>
+    <span>Наш сайт связан с робото-животными, стремящийся повышать осведомленность о новых технологиях и их применения в жизни человека.</span>
+    <div class="social-icons">
+        <a href="https://telegram.org" target="_blank" style="color: #bbb;">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+        <a href="https://vk.com" target="_blank" style="color: #bbb;">
+            <i class="fab fa-vk"></i>
+        </a>
+       
+    </div>
+</div>
+ <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
+
+</html>
