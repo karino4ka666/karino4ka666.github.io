@@ -80,32 +80,67 @@
             padding: 20px;
         }
 
-        /* Стили для формы регистрации */
-        .registration-form {
-            max-width: 400px;
-            width: 100%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #ffffff;
-        }
+  /* Стили для формы регистрации */
+.registration-form {
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #ffffff;
+}
 
-        .registration-form input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px;
-            border: none;
-            border-bottom: 1px solid #ddd;
-            border-radius: 0;
-            outline: none;
-            font-size: 16px;
-        }
+.registration-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    outline: none;
+    font-size: 16px;
+}
 
-        .registration-form input:hover {
-            border-bottom: 2px solid #696969;
-        }
+.registration-form input:hover {
+    border-bottom: 2px solid #696969;
+}
+
+.registration-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.registration-form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .registration-form {
+        margin: 20px; /* Уменьшаем отступы для мобильных устройств */
+        padding: 15px; /* Уменьшаем внутренние отступы для мобильных */
+    }
+
+    .registration-form input {
+        margin: 5px 0; /* Уменьшаем отступы между полями ввода */
+        padding: 8px; /* Уменьшаем внутренние отступы для полей ввода */
+        font-size: 14px; /* Уменьшаем размер шрифта на мобильных */
+    }
+
+    .registration-form input[type="submit"] {
+        padding: 8px; /* Уменьшаем внутренние отступы для кнопки */
+        font-size: 14px; /* Уменьшаем размер шрифта на мобильных */
+    }
+}
+
 
         .registration-form input[type="submit"] {
             width: 100%;
