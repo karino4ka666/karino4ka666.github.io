@@ -74,6 +74,26 @@ h2 {
         transform: translateY(-10px);
     }
 }
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Вертикальное расположение для мобильных */
+        align-items: center; /* Центрируем для мобильных */
+    }
+
+    .contact-info {
+        margin-right: 0; /* Убираем отступ справа */
+        margin-bottom: 20px; /* Отступ снизу для мобильных */
+        width: 100%; /* Полная ширина на мобильных устройствах */
+    }
+
+    .banner {
+        width: 100%; /* Полная ширина на мобильных */
+        max-width: 200px; /* Ограничение максимальной ширины */
+    }
+}
+
   /* Стили для бокового меню */
         .menu {
             position: fixed; /* Фиксированное позиционирование */
@@ -331,6 +351,26 @@ a {
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+
+
+
+
+
+
+
+.video-container {
+    width: 100%; /* Полная ширина для контейнера */
+    max-width: 720px; /* Максимальная ширина для ПК */
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+.video-container iframe {
+    width: 100%; /* Ширина iframe 100% от родительского контейнера */
+    height: auto; /* Высота авто для сохранения пропорций */
+    aspect-ratio: 16/9; /* Соотношение сторон для видео */
+}
+
+
 </style>
 
 
@@ -353,7 +393,7 @@ a {
             <li><a href="создатели — копия — копия — копия.html">Виды робото-животных</a></li>
             <li><a href="калин — копия (2).html">Назначение робото-животных</a></li>
             
-<li><a href="регистрация — копия.html">Регистрация</a></li>
+<li><a href="register.html">Регистрация</a></li>
 
 
         </ul>
@@ -523,21 +563,19 @@ showReview(currentReview);
 
 
 <center>
-<p> Обязательно просмотрите видео про роботов животных</p>
-
-      <iframe
-        width="720"
-        height="405"
-        src="https://rutube.ru/play/embed/f8def8f5326777568bbea2a190ad221e"
-        frameBorder="0"
-        allow="clipboard-write; autoplay"
-        webkitAllowFullScreen
-        mozallowfullscreen
-        allowFullScreen
-      ></iframe>
-    
-
+    <p>Обязательно просмотрите видео про роботов животных</p>
+    <div class="video-container">
+        <iframe
+            src="https://rutube.ru/play/embed/f8def8f5326777568bbea2a190ad221e"
+            frameBorder="0"
+            allow="clipboard-write; autoplay"
+            webkitAllowFullScreen
+            mozallowfullscreen
+            allowFullScreen
+        ></iframe>
+    </div>
 </center>
+
 
 
 
