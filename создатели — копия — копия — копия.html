@@ -16,80 +16,100 @@
        zoom: 0.8; /* Уменьшает весь контент до 80% от оригинального размера */
      transform-origin: top left; /* Устанавливаем точку, откуда начинается масштабирование */
 }
+/* Стили для баннера - оригинальные стили */
+.banner {
+    height: 60vh; /* Высота баннера */
+    display: flex; /* Флекс-контейнер */
+    flex-direction: column; /* Вертикальная ориентация */
+    justify-content: center; /* Центрируем по вертикали */
+    align-items: center; /* Центрируем по горизонтали */
+    position: relative; /* Позиционирование */
+    overflow: hidden; /* Обрезка содержимого */
+    background-color: #ccc; /* Цвет фона баннера */
+    color: white; /* Цвет текста в баннере */
+}
 
-        /* Стили для баннера */
-        .banner {
-            height: 60vh; /* Высота баннера */
-            display: flex; /* Флекс-контейнер */
-            flex-direction: column; /* Вертикальная ориентация */
-            justify-content: center; /* Центрируем по вертикали */
-            align-items: center; /* Центрируем по горизонтали */
-            position: relative; /* Позиционирование */
-            overflow: hidden; /* Обрезка содержимого */
-            background-color: #ccc; /* Цвет фона баннера */
-            color: white; /* Цвет текста в баннере */
-        }
+.slider {
+    display: flex; /* Флекс-контейнер для слайдера */
+    animation: slide 10s infinite; /* Анимация слайдов */
+}
 
-        .slider {
-            display: flex; /* Флекс-контейнер для слайдера */
-            animation: slide 10s infinite; /* Анимация слайдов */
-        }
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
 
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
+    20% {
+        transform: translateX(0);
+    }
 
-            20% {
-                transform: translateX(0);
-            }
+    25% {
+        transform: translateX(-100%);
+    }
 
-            25% {
-                transform: translateX(-100%);
-            }
+    45% {
+        transform: translateX(-100%);
+    }
 
-            45% {
-                transform: translateX(-100%);
-            }
+    50% {
+        transform: translateX(-200%);
+    }
 
-            50% {
-                transform: translateX(-200%);
-            }
+    70% {
+        transform: translateX(-200%);
+    }
 
-            70% {
-                transform: translateX(-200%);
-            }
+    100% {
+        transform: translateX(0);
+    }
+}
 
-            100% {
-                transform: translateX(0);
-            }
-        }
+.slide {
+    min-width: 100%; /* Каждый слайд занимает 100% ширины */
+    transition: opacity 0.5s ease; /* Плавный переход */
+}
 
-        .slide {
-            min-width: 100%; /* Каждый слайд занимает 100% ширины */
-            transition: opacity 0.5s ease; /* Плавный переход */
-        }
+.banner img {
+    width: 100%; /* Изображение на всю ширину */
+    height: auto; /* Автоматическая высота */
+    opacity: 0.7; /* Полупрозрачность */
+    transition: opacity 0.5s ease; /* Плавный переход */
+}
 
-        .banner img {
-            width: 100%; /* Изображение на всю ширину */
-            height: auto; /* Автоматическая высота */
-            opacity: 0.7; /* Полупрозрачность */
-            transition: opacity 0.5s ease; /* Плавный переход */
-        }
+.banner img:hover {
+    opacity: 1; /* Полная непрозрачность при наведении */
+}
 
-        .banner img:hover {
-            opacity: 1; /* Полная непрозрачность при наведении */
-        }
+.banner h1 {
+    position: absolute; /* Объект над текстом */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Выравнивание по центру */
+    font-size: 3em; /* Размер шрифта */
+    text-align: center; /* Центрированное выравнивание */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Тень для текста */
+}
 
-        .banner h1 {
-            position: absolute; /* Объект над текстом */
-            top: 50%; /* Центрируем по вертикали */
-            left: 50%; /* Центрируем по горизонтали */
-            transform: translate(-50%, -50%); /* Выравнивание по центру */
-            font-size: 3em; /* Размер шрифта */
-            text-align: center; /* Центрированное выравнивание */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Тень для текста */
-        }
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .banner {
+        height: 40vh; /* Уменьшаем высоту баннера для мобильных устройств */
+    }
+
+    .banner h1 {
+        font-size: 1.5em; /* Уменьшаем размер шрифта заголовка для мобильных устройств */
+        top: 40%; /* Смешиваем немного выше по вертикали для мобильной версии */
+    }
+
+    .banner img {
+        opacity: 0.9; /* Увеличиваем непрозрачность на мобильных устройствах */
+    }
+
+    .banner img:hover {
+        opacity: 1; /* Полная непрозрачность при наведении сохраняется */
+    }
+}
+
 
         .button {
             position: absolute; /* Позиционирование для кнопки */
